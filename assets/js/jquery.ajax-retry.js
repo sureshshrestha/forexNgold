@@ -1,0 +1,1 @@
+(function(e){function t(t,n){return function(r,i,s){function a(){e.ajax(o).retry({times:n-1}).pipe(u.resolve,u.reject)}var o=this,u=new e.Deferred;return n>1?t.timeout!==undefined?setTimeout(a,t.timeout):a():u.rejectWith(this,arguments),u}}e.ajaxPrefilter(function(e,n,r){r.retry=function(e){return e.timeout&&(this.timeout=e.timeout),this.pipe(null,t(this,e.times))}})})(jQuery);

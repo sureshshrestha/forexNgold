@@ -98,6 +98,39 @@
 	.thumbnail{
 		margin:10px;
 	}
+
+	figure {
+		margin:0;
+		position:relative;
+		border:5px solid white;
+
+		-webkit-box-shadow:0 0 4px rgba(0,0,0,.3);
+		-moz-box-shadow:0 0 4px rgba(0,0,0,.3);
+		box-shadow:0 0 4px rgba(0,0,0,.3);
+		display:block;
+		cursor:pointer;
+		overflow:hidden;
+	}
+	.thumbnail img{
+		width:100%;
+		padding-left: 55px;
+	}
+	figure img {
+		-webkit-transition:all 1.5s;
+		-moz-transition:all 1.5s;
+		-o-transition:all 1.5s;
+		-ms-transition:all 1.5s;
+		transition:all 1.5s;
+	}
+
+	figure:hover img {
+		-webkit-transform:scale(1.1);
+		-moz-transform:scale(1.1);
+		-o-transform:scale(1.1);
+		-ms-transform:scale(1.1);
+		transform:scale(1.1);
+	}
+
 </style>
 
 <script type="text/javascript">
@@ -127,12 +160,12 @@
 
 						We aspire to be helpful to people who are seeking current foreign	 exchange rates, gold&silver prices and banker, investors, international traders 
 						and economist by providing relavant graphical visualization of past forex and gold data.  
-						
+
 						This website is developed as an intership project by students of <a href="http://www.ku.edu.np">Kathmandu University </a> at 
 						<a href="http://www.younginnovations.com.np">Young Innovations Pvt. Ltd.</a>
 
 					</p>
-					Find our project in <a href="https://github.com/amirsaga/ForexNGold">git:</a>
+					Find our project in <a href="https://github.com/sur3s/forexNgold">https://github.com/sur3s/forexNgold</a>
 				</div>
 			</div>	
 			<div class="span6" >
@@ -148,8 +181,8 @@
 						<li>The visual graphs and data can be used as needed by anybody.</li>
 						<li>Any person who need these data can access it from our API </li>
 					</ul>
-					
-					
+
+
 				</div>	
 			</div>
 		</div>
@@ -161,11 +194,13 @@
 
 		<div class="span4" >
 			<div class="thumbnail" style="margin:10px">
-				<img src="http://localhost/forex_ci/assets/img/n.jpg" style="width:177px;height:180px"/>
+				<figure>
+					<img src="http://localhost/forex_ci/assets/img/n.jpg" style="width:177px;height:180px"/>
+				</figure>
 				<center><div class="caption">
 						<h5>Nimesh Mishra</h5>
 						<p>Email:isnimeshmishra@gmail.com<br>
-							</p>
+						</p>
 						<div style="margin-left:0px">
 							<!--<h1>Follow us: </h1>-->
 							<ul class="social">
@@ -182,11 +217,13 @@
 
 		<div class="span4" >
 			<div class="thumbnail " style="margin-left:0px">
+				<figure>
 				<img src="http://localhost/forex_ci/assets/img/s.jpg" style="width:177px;height:180px"/>
+				</figure>
 				<center><div class="caption">
 						<h5>Suresh Shrestha</h5>
 						<p>Email:surestha@gmail.com
-							</p>
+						</p>
 						<div style="margin-left:0px">
 							<!--<h1>Follow us: </h1>-->
 							<ul class="social">
@@ -202,18 +239,20 @@
 		</div>	
 		<div class="span4">
 			<div class="thumbnail" style="margin-left:0px">
+				<figure>
 				<img src="http://localhost/forex_ci/assets/img/a.jpg" style="width:177px;height:180px"/>
+				</figure>
 				<center><div class="caption">
 						<h5>Amir Sagar Shrestha</h5>
 						<p>Email:amrsaga@gmail.com
-							</p>
+						</p>
 						<div style="margin-left:0px">
 							<!--<h1>Follow us: </h1>-->
 							<ul class="social">
 								<li ><a class="icon-facebook" href="https://www.facebook.com/amirsaga" target="_blank"></a>
 								</li>
 								<li ><a class="icon-twitter" href="https://twitter.com/amirsaga" target="_blank"></a></li>
-								<li ><a class="icon-google-plus" href="https://np.linkedin.com/pub/suresh-shrestha/48/672/224" target="_blank"></a></li>
+								<li ><a class="icon-google-plus" href="#" target="_blank"></a></li>
 							</ul>
 						</div>
 					</div>

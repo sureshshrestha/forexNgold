@@ -1,7 +1,7 @@
 $(function() {
 	$.getJSON('http://localhost/forex_ci/lib/history_gold.json', function(data) {
 
-		// split the data set into ohlc and volume
+		
 		var hallmark = [],
 				tejabi = [],
 				silver = [],
@@ -25,10 +25,18 @@ $(function() {
 			]);
 		}
 
-		// set the allowed units for data grouping
+	Highcharts.setOptions({
+        global : {
+            useUTC : false
+        }
+    });
 
-		// create the chart
-		$('#history_gold').highcharts('StockChart', {
+		var chart = new Highcharts.StockChart({
+        chart: {
+        renderTo: 'history_gold',
+        type:'spline'
+                  
+    },
 			rangeSelector: {
 				selected: 1
 			},

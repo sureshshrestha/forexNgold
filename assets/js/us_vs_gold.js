@@ -1,7 +1,7 @@
 $(function() {
   $.getJSON('http://localhost/forex_ci/lib/us_gold_stock.json', function(data) {
 
-    // split the data set into ohlc and volume
+    
     var gold = [],
         dollar= [],
       dataLength = data.length;
@@ -19,9 +19,13 @@ $(function() {
       ]) 
     }
 
-    // set the allowed units for data grouping
+       Highcharts.setOptions({
+        global : {
+            useUTC : false
+        }
+    });
  
-    chart = new Highcharts.StockChart({
+    var chart = new Highcharts.StockChart({
             chart: {
                 renderTo: 'us_gold_stock',
                 alignTicks: true,
@@ -34,12 +38,12 @@ $(function() {
             },
 
             title: {
-                text: 'GOLD VS DOLLAR'
+                text: 'Prices comparison "Gold VS Dollar" in NRs.'
             },
             
                yAxis: [{ // Primary yAxis
                 labels: {
-                    format: 'Rs.{value}',
+                    format: 'NRs.{value}',
                     style: {
                         color: '#89A54E'
                     }
@@ -58,7 +62,7 @@ $(function() {
                     }
                 },
                 labels: {
-                    format: 'Rs.{value}',
+                    format: 'NRs.{value}',
                     style: {
                         color: '#4572A7'
                     }

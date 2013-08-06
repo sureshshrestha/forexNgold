@@ -80,10 +80,12 @@ class Chart extends CI_Model
 	}
 	public function get_date($var) {
 			$this->db->distinct();
-			$this->db->select('date_added')->from($var)->order_by('date_added','desc')->limit(30);
+			$this->db->select('date_added')->from($var)->order_by('date_added','desc');
 			$query = $this->db->get();
 			return $query->result_array();
 		}
+
+	
 
 		
 

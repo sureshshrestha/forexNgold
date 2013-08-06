@@ -5,18 +5,18 @@
    </footer>
 </body>
  <script>
-//jQuery(document).ready(function(e){
-//    $('#navbar a').click(function (e) {
-//        //var $this = $(this);
-//        var top = $($this.attr('href')).offset().top - 10;
-//        
-//        $('html, body').stop().animate({
-//            scrollTop: top
-//        }, 'slow');
-//        
-//        e.preventDefault();
-//    });
-//});
+jQuery(document).ready(function(e){
+    $('#navbar a').click(function (e) {
+        var $this = $(this);
+        var top = $($this.attr('href')).offset().top - 10;
+        
+        $('html, body').stop().animate({
+            scrollTop: top
+        }, 'slow');
+        
+        e.preventDefault();
+    });
+});
 </script>
     <script type="text/javascript" src="http://localhost/forex_ci/assets/js/current_forex.js"></script>
     <script type="text/javascript" src="http://localhost/forex_ci/assets/js/current_gold.js"></script>

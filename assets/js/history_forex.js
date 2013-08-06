@@ -82,10 +82,21 @@ $(function() {
 			]);
 		}
 
+Highcharts.setOptions({
+        global : {
+            useUTC : false
+        }
+    });
 
 
-		// create the chart
-		$('#container').highcharts('StockChart', {
+
+		var chart = new Highcharts.StockChart({
+		        chart: {
+		        renderTo: 'container',
+		        type:'spline'
+		                  
+		    },
+		
 			rangeSelector: {
 				selected: 1
 			},

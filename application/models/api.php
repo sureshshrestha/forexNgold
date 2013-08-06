@@ -41,6 +41,12 @@ class api extends CI_Model
 				return $query->result_array();
 			}
 	
+	 function email_exists($email){
+			  $this->db->where('email', $email);
+			  $query = $this->db->get('api_user');
+			  if( $query->num_rows() > 0 ){ return TRUE; } else { return FALSE; }
+}
+
 
 
 	 function register($name, $email, $ip,$key){

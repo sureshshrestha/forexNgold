@@ -32,7 +32,7 @@ class apis extends REST_Controller
 			$forex_buy= $values[$keys[0]];
 		}
 	
-			if($forex_buy>=550){
+			if($forex_buy>=20){
 				$this->exceed_limit();
 			}
 		

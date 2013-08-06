@@ -39,9 +39,6 @@ class Downloads extends CI_Controller {
 			}
 
 
-
-
-
 			echo "From: &nbsp";
 			echo form_dropdown('date_from', $date_array);
 			echo "<br>";

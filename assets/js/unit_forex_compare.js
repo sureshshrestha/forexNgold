@@ -1,6 +1,6 @@
 $(function() {
 	$.getJSON('http://localhost/forex_ci/lib/history_forex.json', function(data) {
-		// split the data set into ohlc and volume
+		
 		var euro = [],
 		dollar = [],
 		pound = [],
@@ -55,13 +55,22 @@ $(function() {
 
 
 
-		// create the chart
-		$('#unit').highcharts('StockChart', {
+	Highcharts.setOptions({
+        global : {
+            useUTC : false
+        }
+    });
+		var chart = new Highcharts.StockChart({
+        chart: {
+        renderTo: 'unit',
+        type:'spline'
+                  
+    },
 			rangeSelector: {
 				selected: 1
 			},
 			title: {
-				text: 'Forex Comparisons'
+				text: 'Forex Comparisons with dollar in NRs.'
 			},
 
 			credits: {

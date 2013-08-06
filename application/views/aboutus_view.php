@@ -6,10 +6,9 @@
 		font-weight: normal;
 		font-style: normal; }
 
-	.icon-dribbble:before, .icon-twitter:before, .icon-facebook:before, .icon-pinterest:before,
-	.icon-flickr:before, .icon-google-plus:before, .icon-tumblr:before, .icon-github:before,
-	.icon-dribbble:after, .icon-twitter:after, .icon-facebook:after, .icon-pinterest:after,
-	.icon-flickr:after, .icon-google-plus:after, .icon-tumblr:after, .icon-github:after {
+	.icon-twitter:before, .icon-facebook:before, .icon-google-plus:before, .icon-github:before,
+	.icon-twitter:after, .icon-facebook:after,
+	.icon-google-plus:after, .icon-github:after {
 		font-family: 'icomoon';
 		speak: none;
 		font-style: normal;
@@ -17,26 +16,14 @@
 		line-height: 1;
 		-webkit-font-smoothing: antialiased; }
 
-	.icon-dribbble:before, .icon-dribbble:after {
-		content: "\e00a"; }
-
 	.icon-twitter:before, .icon-twitter:after {
 		content: "\e00b"; }
 
 	.icon-facebook:before, .icon-facebook:after {
 		content: "\e007"; }
 
-	.icon-pinterest:before, .icon-pinterest:after {
-		content: "\e000"; }
-
-	.icon-flickr:before, .icon-flickr:after {
-		content: "\e001"; }
-
 	.icon-google-plus:before, .icon-google-plus:after {
 		content: "\e003"; }
-
-	.icon-tumblr:before, .icon-tumblr:after {
-		content: "\e002"; }
 
 	.icon-github:before, .icon-github:after {
 		content: "\e004"; }
@@ -93,7 +80,6 @@
 		text-align:justify;
 		text-indent:20px;
 		font-family:verdana;
-
 	}
 	.thumbnail{
 		margin:10px;
@@ -133,23 +119,7 @@
 
 </style>
 
-<script type="text/javascript">
-
-//	$(document).ready(function() {
-//		$(".contactformcontainer").hide();
-//		$("#cnt").click(function() {
-//			$(".contactformcontainer").slideLeft();
-//		});
-
-//	});
-// function closeForm(){
-//   $("#messageSent").show("slow");
-//   setTimeout('$("#messageSent").hide();$("contactform").slideUp("slow")',2000)
-// }
-</script>	
 <div class="container">
-
-
 	<div class="row-fluid" >
 		<div style="padding:20px">
 			<div class="span6"  >
@@ -199,7 +169,7 @@
 				</figure>
 				<center><div class="caption">
 						<h5>Nimesh Mishra</h5>
-						<p>Email:isnimeshmishra@gmail.com<br>
+						<p>Email: isnimeshmishra@gmail.com<br>
 						</p>
 						<div style="margin-left:0px">
 							<!--<h1>Follow us: </h1>-->
@@ -218,17 +188,14 @@
 		<div class="span4" >
 			<div class="thumbnail " style="margin-left:0px">
 				<figure>
-				<img src="http://localhost/forex_ci/assets/img/s.jpg" style="width:177px;height:180px"/>
+					<img src="http://localhost/forex_ci/assets/img/s.jpg" style="width:177px;height:180px"/>
 				</figure>
 				<center><div class="caption">
 						<h5>Suresh Shrestha</h5>
-						<p>Email:surestha@gmail.com
-						</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: surestha@gmail.com</p>
 						<div style="margin-left:0px">
-							<!--<h1>Follow us: </h1>-->
 							<ul class="social">
-								<li ><a class="icon-facebook" href="https://www.facebook.com/sur3stha" target="_blank"></a>
-								</li>
+								<li ><a class="icon-facebook" href="https://www.facebook.com/sur3stha" target="_blank"></a></li>
 								<li ><a class="icon-twitter" href="https://twitter.com/sur3s" target="_blank"></a></li>
 								<li ><a class="icon-google-plus" href="#" target="_blank"></a></li>
 							</ul>
@@ -240,17 +207,15 @@
 		<div class="span4">
 			<div class="thumbnail" style="margin-left:0px">
 				<figure>
-				<img src="http://localhost/forex_ci/assets/img/a.jpg" style="width:177px;height:180px"/>
+					<img src="http://localhost/forex_ci/assets/img/a.jpg" style="width:177px;height:180px"/>
 				</figure>
 				<center><div class="caption">
 						<h5>Amir Sagar Shrestha</h5>
-						<p>Email:amrsaga@gmail.com
+						<p> &nbsp;&nbsp;Email:mrshrsth007@gmail.com
 						</p>
 						<div style="margin-left:0px">
-							<!--<h1>Follow us: </h1>-->
 							<ul class="social">
-								<li ><a class="icon-facebook" href="https://www.facebook.com/amirsaga" target="_blank"></a>
-								</li>
+								<li ><a class="icon-facebook" href="https://www.facebook.com/amirsaga" target="_blank"></a></li>
 								<li ><a class="icon-twitter" href="https://twitter.com/amirsaga" target="_blank"></a></li>
 								<li ><a class="icon-google-plus" href="#" target="_blank"></a></li>
 							</ul>

@@ -22,6 +22,9 @@
 				<iframe scrolling="no" src="http://www.negosida.com.np" style="border: 0px none; margin-left: -500px; height: 150px; margin-top: -45px; width: 1210px; float:left;"></iframe>
 			</div>
 		</div>
-
+		<div>
+			<?php IF (isset($result))echo $result; ?>
+			<?php IF (isset($result_gold))echo $result_gold; ?>
+		</div>
 	</div>
 </div>

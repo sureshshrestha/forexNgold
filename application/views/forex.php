@@ -29,7 +29,6 @@
 				</p>
 			</center>
 		</div>				
-
 	</div>
 	<div class="row-fluid">
 		<hr>
@@ -38,7 +37,6 @@
 		<div class="span8" style="float:left">
 			<div id="container" style="height: 500px;border:1px solid black;margin:20px  "></div>
 		</div>
-
 		<div  class="span3" style="margin:20px  ;border:solid black 1px;width:305px">
 			<a class="twitter-timeline" href="https://twitter.com/search?q=%23forex" data-widget-id="362480211285143552">Tweets about "#forex"</a>
 			<script>!function(d, s, id) {
@@ -50,9 +48,7 @@
 						fjs.parentNode.insertBefore(js, fjs);
 					}
 				}(document, "script", "twitter-wjs");</script>
-
 		</div>
-
 	</div>
 </div>		
 
@@ -77,10 +73,8 @@
 	<li>SEK : <em>Swedish krona </em></li>
 	<li>THB : <em>Thai baht </em></li>
 	<li>USD : <em>US dollar</em>	</li>
-	
 	<li><h6>* INR in 100 units</h6></li>
 	<li><h6>** JPY in 10 units</h6></li>
-	
 </ul>
 
 <script type="text/javascript" src="assets/js/jquery.sidebar.js"></script>
@@ -108,3 +102,7 @@
 		position: "bottom"
 	});
 </script>
+
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/current_forex.js"></script>
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/history_forex.js"></script>
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/select_forex_date.js"></script>

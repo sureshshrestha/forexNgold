@@ -1,5 +1,3 @@
-
-
 <div class="container" style="margin-top: 3px">
 
 	<div class="hero-unit" >
@@ -18,10 +16,7 @@
 			<div   class="span8 " id="us_gold_stock" ></div>
 		</div>
 	</div>
-
 </div>
-
-
 
 <div class="container" style="background-color:#F8F8F8"> 
 	<div class="row-fluid">
@@ -30,35 +25,28 @@
 
 	</div>
 	<div class="row-fluid" style="background-color:#F8F8F8">	
-		
-	<div class="span12" style="margin:10px">
-		<div class="unit_comp">
-			<div id="unit" class="span12" ></div>
-		</div>   
-	</div >
-	<div style="padding:20px">
 
-		<button id="euro" class="btn btn-primary" >EURO</button>
+		<div class="span12" style="margin:10px">
+			<div class="unit_comp">
+				<div id="unit" class="span12" ></div>
+			</div>   
+		</div >
+		<div style="padding:20px">
 
-		<button id="pound" class="btn btn-primary">POUND</button>
-
-		<button id="franc" class="btn btn-primary">FRANC</button>
-		<button id="aud" class="btn btn-primary">AUD</button>
-		<button id="cad" class="btn btn-primary">CAD</button>
-		<button id="yen" class="btn btn-primary">YEN</button>
-		<button id="hk" class="btn btn-primary">HK</button>
+			<button id="euro" class="btn btn-primary" >EURO</button>
+			<button id="pound" class="btn btn-primary">POUND</button>
+			<button id="franc" class="btn btn-primary">FRANC</button>
+			<button id="aud" class="btn btn-primary">AUD</button>
+			<button id="cad" class="btn btn-primary">CAD</button>
+			<button id="yen" class="btn btn-primary">YEN</button>
+			<button id="hk" class="btn btn-primary">HK</button>
 		</div>
-	
-	
 	</div>
-		
-
-	</div>
-
-	
-
-</div>
-
-</div>
 </div>
 <HR>
+
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/us_vs_gold.js"></script>
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/unit_forex_compare.js"></script>
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/countries.js"></script>
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/leaflet.js"></script>
+<script type="text/javascript" src="http://localhost/forex_ci/assets/js/worldmap.js"></script>

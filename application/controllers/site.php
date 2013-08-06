@@ -15,41 +15,12 @@ class Site extends CI_Controller {
 
 	function index()
 	{
-//		$config = array();
-//		$config["base_url"]=base_url()."site/pagination";
-//		$config["total_rows"] = $this->site_model->record_count();
-//		$config["per_page"]=10;
-//		$config["uri_segment"]=3;
-//		$choice = $config["total_rows"] / $config["per_page"];
-//		$config["num_links"] = round($choice);
-//		
-//		$this->pagination->initialize($config);
-//		
-//		$page=($this->uri->segment(3)) ? $this->uri->segment(3):0;
-//		$data["results"] = $this->site_model->fetch_forex($config["per_page"], $page);
-//		$data["links"] = $this->pagination->create_links();
-		
 		$this->load->view("scrape_view");
-		
-//		$query = $this->site_model->get_records();
-		
-//		$queryGold = $this->site_model->get_record_gold();
-//		if ($query != NULL)
-//		{
-//			$data['records'] = $query;
-//		}
-//		if ($queryGold != NULL)
-//		{
-//			$data['goldRecords'] = $queryGold;
-//		}
-//		$this->load->view('admin_area', $goldData);
-//		$this->load->view('admin_area', $data);
 	}
 	
 	function history_data()
 	{
 		$this->load->view("admin_area", $data);
-//		$this->load->view('history_data_view');
 	}
 
 	function is_logged_in()

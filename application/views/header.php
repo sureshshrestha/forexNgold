@@ -5,14 +5,10 @@
 
 		<title>Forex'N'Gold</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--<link rel="stylesheet" href="http://localhost/forex_ci/assets/css/style.css">-->
 		<link rel="stylesheet" href="http://localhost/forex_ci/assets/css/bootstrap.css">
-		<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 		<script type="text/javascript" src="http://localhost/forex_ci/assets/js/highcharts/jquery-1.7.1.min.js"></script>
-		<!--<script type="text/javascript" src="http://localhost/forex_ci/assets/js/jquery-ui.min.js"/>-->
-		
 		<link rel="stylesheet" href="http://localhost/forex_ci/assets/css/leaflet.css">
-		
+
 		<style type="text/css">
 			* {
 				margin: 0;
@@ -67,11 +63,9 @@
 
 			.navbar{
 				margin-bottom: 0px;
-
 			}
 			.id{
 				margin-bottom: 0px;
-
 			}
 			.dvg{
 				min-height: 300px; border:1px solid black; float:right;margin:20px 20px 20px 0px;
@@ -85,8 +79,6 @@
 			#map {
 				width: 1024px;
 				height: 500px
-					/*padding:0;*/
-
 			}
 
 			.info {
@@ -115,17 +107,13 @@
 				opacity: 0.7;
 			}
 		</style>
-	
+
 	</head>
 	<body style="background-color:">
-
-
-
 		<header>
 			<div class="row-fluid">
 				<div class="span12" style="width:100%">
 					<img id="header" src="http://localhost/forex_ci/assets/img/bannerImg.jpg" alt="image not shown;header 123.jpg"/>
-
 					<div class="navbar " >
 						<div class="navbar-inner">
 							<ul class="nav"  >
@@ -136,13 +124,7 @@
 								<li  id="down" class="<?= ($this->uri->segment(1) === 'downloads') ? 'active' : '' ?>"><a href="<?= base_url() ?>downloads">Download</a></li>
 								<li  id="cont" class="<?= ($this->uri->segment(1) === 'aboutus') ? 'active' : '' ?>"><a href="<?= base_url() ?>aboutus">About Us</a></li>
 							</ul>
-
-
 						</div>
-
 					</div> 
-
-
-
 					</header>
 

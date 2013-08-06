@@ -5,7 +5,6 @@ class Scrape_engine_forex extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-
 		$this->load->model('forex');
 		$this->load->helper('simple_html_dom');
 	}
@@ -77,38 +76,28 @@ class Scrape_engine_forex extends CI_Controller {
 			$forexArray['KPW_buy'] = $value[34];
 			$forexArray['KPW_sell'] = $value[35];
 		}
-
-		//to get forex_today.json
-		$jsondata = json_encode($forexArray);
-		$filesite= 'c:/wamp/www/forex_ci/lib/forex_today.json';
-		if (file_put_contents($filesite, $jsondata))
-			echo('Forex json file of ' . $forexArray['date_added'] . ' is created successfully.');
-		else
-		{
-			echo('Error in Forex json creation!!!');
-			exit();
-		}
-		
 		$html->clear();
 		unset($html);
 
 		if ($forexArray['date_added'] == '' || $forexArray['date_added'] == 'null' || $forexArray['date_added'] == null)
 		{
-			echo "There is problem while scraping data!!";
+			$forexArray['result'] = "There is problem while scraping data!!";
 			exit;
 		}
 		else
 		{
 			$this->forex->date_check($forexArray);
+			//to get forex_today.json
+			$jsondata = json_encode($forexArray);
+			$filesite = FCPATH . '/lib/forex_today.json';
+			file_put_contents($filesite, $jsondata);
+			$forexArray['result'] = ('Forex data scraped successfully and Forex json file of ' . $forexArray['date_added'] . ' is created successfully.');
 		}
 
-		redirect(base_url() . 'site');
-//				$forexArray['forex'] = $forexArray;
-//				$this->load->view('header');  
-//    			$this->load->view('home', $forexArray);  
-//    			$this->load->view('footer'); 
+		$this->load->view('header_admin');
+		$this->load->view('scrape_view', $forexArray);
+		$this->load->view('footer');
 	}
-
 }
 
 ?>

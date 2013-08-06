@@ -16,7 +16,6 @@ class Downloads extends CI_Controller {
 
 	function index()
 	{
-
 		$data = array();
 		// $data['dates'] = $this->chart->get_date('goldpricenepal');
 		$this->load->view('header');
@@ -32,13 +31,10 @@ class Downloads extends CI_Controller {
 			$table = $_POST['field_type'];
 			$dates = $this->chart->get_date($table);
 			$date_array = array();
-
 			foreach ($dates as $date)
 			{
 				$date_array[$date['date_added']] = $date['date_added'];
 			}
-
-
 			echo "From: &nbsp";
 			echo form_dropdown('date_from', $date_array);
 			echo "<br>";

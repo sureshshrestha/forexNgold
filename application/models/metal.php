@@ -11,7 +11,7 @@ class metal extends CI_Model {
 
 	function get_current_metal()
 	{
-		$this->db->select()->from('goldpricenepal')->order_by('date_added', 'desc');
+		$this->db->select()->from('goldpricenepal')->order_by('Date', 'desc');
 		$query = $this->db->get();
 		return $query->first_row('array');
 	}
@@ -37,7 +37,7 @@ class metal extends CI_Model {
 
 	function date_check($metalArray)
 	{
-		$ql = $this->db->select('date_added')->from('goldpricenepal')->where('date_added', $metalArray['date_added'])->get();
+		$ql = $this->db->select('Date')->from('goldpricenepal')->where('Date', $metalArray['Date'])->get();
 
 		if ($ql->num_rows() > 0)
 		{

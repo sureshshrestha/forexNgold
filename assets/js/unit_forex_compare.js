@@ -1,5 +1,5 @@
 $(function() {
-	$.getJSON('http://localhost/forex_ci/lib/history_forex.json', function(data) {
+	$.getJSON('lib/history_forex.json', function(data) {
 		
 		var euro = [],
 		dollar = [],

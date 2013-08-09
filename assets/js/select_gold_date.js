@@ -1,12 +1,12 @@
 $(document).ready(function(){
-		$('#date_added').change(function(){
+		$('#gold_date').change(function(){
 			var selDate = $(this).val();
 			//console.log(selDate);
 			$.ajax({
 				url: "charts/drop_down_data",		
 				async: false,			
 				type: "POST",					
-				data: "date_added="+selDate,		
+				data: "gold_date="+selDate,		
 				dataType: "json",				
 				success: function chart(data) {
 					var chart = new Highcharts.Chart({

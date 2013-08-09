@@ -4,9 +4,8 @@
 		<meta charset="utf-8">
 		<title>Forex'N'Gold</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="http://localhost/forex_ci/assets/css/bootstrap.css">
-		<script type="text/javascript" src="http://localhost/forex_ci/assets/js/highcharts/jquery-1.7.1.min.js"></script>
-		<link rel="stylesheet" href="http://localhost/forex_ci/assets/css/leaflet.css">
+		<style>  @import url('<?=base_url()?>assets/css/bootstrap.css');</style>
+		<script type="text/javascript" src="<?=base_url()?>assets/js/highcharts/jquery-1.7.1.min.js"></script>
 
 		<style type="text/css">
 			* {
@@ -69,42 +68,7 @@
 			.dvg{
 				min-height: 300px; border:1px solid black; float:right;margin:20px 20px 20px 0px;
 			}
-			.unit_comp{
-				min-height: 400px; 
-				border:1px solid black;
-				float:left;
-				margin:10px;
-			}
-			#map {
-				width: 1024px;
-				height: 500px
-			}
 
-			.info {
-				padding: 6px 8px;
-				font: 14px/16px Arial, Helvetica, sans-serif;
-				background: white;
-				background: rgba(255,255,255,0.8);
-				box-shadow: 0 0 15px rgba(0,0,0,0.2);
-				border-radius: 5px;
-			}
-			.info h4 {
-				margin: 0 0 5px;
-				color: #777;
-			}
-
-			.legend {
-				text-align: right;
-				line-height: 18px;
-				color: #555;
-			}
-			.legend i {
-				width: 18px;
-				height: 18px;
-				float: right;
-				margin-right: 8px;
-				opacity: 0.7;
-			}
 		</style>
 
 	</head>
@@ -112,7 +76,7 @@
 		<header>
 			<div class="row-fluid">
 				<div class="span12" style="width:100%">
-					<img id="header" src="http://localhost/forex_ci/assets/img/bannerImg.jpg" alt="image not shown;header 123.jpg"/>
+					<img id="header" src="<?base_url()?>assets/img/bannerImg.jpg" alt="image not shown;header 123.jpg"/>
 				</div>
 			</div>
 		<header>

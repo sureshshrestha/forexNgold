@@ -1,7 +1,5 @@
-<a href="#" class="scrollup" style="display: inline;">Scroll</a>
-<footer  style="background-color:#C0C0C0">
-	<p align="center" >Courtesy Team Young, 2013</p>
-</footer>
+<div id="footer">
+   <p> <center>Courtesy of Team Young,2013</center></p>
 </body>
 <script>
 	jQuery(document).ready(function(e) {
@@ -18,7 +16,7 @@
 	});
 </script>
 
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/predictadme.js"></script>
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/highcharts/highstock.js"></script>
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/highcharts/exporting.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/predictadme.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/highcharts/highstock.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/highcharts/exporting.js"></script>
 </html>

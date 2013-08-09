@@ -122,10 +122,10 @@ class Scrape_engine extends CI_Controller {
 		}
 
 		$dateBS = $this->_convert2AD($this->scrapedDate);
-		$metalArray = array('date_added' => null, 'hallmark_amt' => null, 'tejabi_amt' => null, 'silver_amt' => null);
+		$metalArray = array('Date' => null, 'Hallmark' => null, 'Tejabi' => null, 'Silver' => null);
 
 		$temp = implode("-", $dateBS);
-		$metalArray['date_added'] = $temp;
+		$metalArray['Date'] = $temp;
 
 		$flag = 'hallmark';
 		foreach ($html->find('div[id=goldContainer]') as $goldPrice)
@@ -134,12 +134,12 @@ class Scrape_engine extends CI_Controller {
 			{
 				if ($flag == 'hallmark')
 				{
-					$metalArray['hallmark_amt'] = $goldValue->plaintext;
+					$metalArray['Hallmark'] = $goldValue->plaintext;
 					$flag = 'tejabi';
 				}
 				else if ($flag == 'tejabi')
 				{
-					$metalArray['tejabi_amt'] = $goldValue->plaintext;
+					$metalArray['Tejabi'] = $goldValue->plaintext;
 				}
 				else
 					return 'Error in scraping gold price!!!';
@@ -148,12 +148,12 @@ class Scrape_engine extends CI_Controller {
 
 		foreach ($html->find('div[id=silverContainer] li B') as $silverPrice)
 		{
-			$metalArray['silver_amt'] = $silverPrice->plaintext;
+			$metalArray['Silver'] = $silverPrice->plaintext;
 		}
 
 		$metalArray = filter_var_array($metalArray, FILTER_SANITIZE_STRING);
 
-		if ($metalArray['date_added'] == '' || $metalArray['date_added'] == 'null' || $metalArray['date_added'] == null)
+		if ($metalArray['Date'] == '' || $metalArray['Date'] == 'null' || $metalArray['Date'] == null)
 		{
 			$metalArray['result_gold'] = "There is problem while scraping data!!";
 			exit;
@@ -161,7 +161,7 @@ class Scrape_engine extends CI_Controller {
 		else
 		{
 			$this->metal->date_check($metalArray);
-			$metalArray['result_gold'] = ('Gold data scraped successfully of ' . $metalArray['date_added']);
+			$metalArray['result_gold'] = ('Gold data scraped successfully of ' . $metalArray['Date']);
 		}
 		$html->clear();
 		unset($html);

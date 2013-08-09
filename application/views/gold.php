@@ -1,27 +1,20 @@
 <div class="container" >
-	<div class="row-fluid" style="margin-top:3px" >	
-		<div class="span12" >
-			<div  class="" id="history_gold"  style=" border:1px solid black;height: 400px;margin:20px"></div>
-			<center><p stye="text-color:gray;border:solid white 1px">This graph shows the increases and decreases in the price of gold and silver from the year 2067BS </p></center>
-			<hr>
-		</div>
-	</div>
-
+	
 	<div class="row-fluid" >
 		<div class="span8"  >
-			<div id="drop_down" style="margin-top:1px;float:right;margin-right:30px;margin-buttom:1px">
+			<div id="drop_down" >
 				<?php
 				$date_array = array();
 				foreach ($dates as $date)
 				{
-					$date_array[$date['date_added']] = $date['date_added'];
+					$date_array[$date['Date']] = $date['Date'];
 				}
-				echo form_dropdown('date_added', $date_array, '', 'id="date_added"');
+				echo form_dropdown('gold_date', $date_array, '', 'id="gold_date"');
 				?>
 			</div>
-			<div id="current_gold" style=" border:1px solid black;height: 500px;margin:40px 30px 20px 20px;"></div>
+			<div id="current_gold" ></div>
 		</div>   
-		<div class="span4" style=" border:1px solid black;margin:40px 20px 20px 0px;float:right"> 
+		<div class="span4" id="g_span4"> 
 			<a class="twitter-timeline" href="https://twitter.com/search?q=%23goldprice" data-widget-id="362438888259719169">Tweets about "#goldprice"</a>
 			<script>!function(d, s, id) {
 					var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -35,9 +28,16 @@
 		</div>	
 	</div>
 	<hr>
+	<div class="row-fluid"  >	
+		<div class="span12" >
+			<div   id="history_gold" ></div>
+			<center><p >This graph shows the increases and decreases in the price of gold and silver from the year 2067BS </p></center>
+			<hr>
+		</div>
+	</div>
+
 </div>
 
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/current_gold.js"></script>
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/history_gold.js"></script> 
-
-
+<script type="text/javascript" src="<?=base_url()?>assets/js/current_gold.js"></script>
+<script type="text/javascript" src="<?=base_url()?>assets/js/history_gold.js"></script> 
+<script type="text/javascript" src="<?=base_url()?>assets/js/select_gold_date.js"></script> 

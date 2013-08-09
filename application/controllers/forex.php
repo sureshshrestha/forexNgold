@@ -14,7 +14,7 @@ class Forex extends CI_Controller {
 		$this->forex_json();
 		$this->current_forex();
 		$data = array();
-		$data['forex_dates'] = $this->chart->get_date('final');
+		$data['forex_dates'] = $this->chart->get_date('forex');
 		$this->load->view('header');
 		$this->load->view('forex', $data);
 		$this->load->view('footer');
@@ -41,9 +41,9 @@ class Forex extends CI_Controller {
 
 	function current_forex()
 	{
-		$col_name = $this->chart->get_fields('final');
-		$col_buy = 'UNIX_TIMESTAMP(date_added)*1000,';
-		$col_sell = 'UNIX_TIMESTAMP(date_added)*1000,';
+		$col_name = $this->chart->get_fields('forex');
+		$col_buy = 'UNIX_TIMESTAMP(Date)*1000,';
+		$col_sell = 'UNIX_TIMESTAMP(Date)*1000,';
 		foreach ($col_name as $value)
 		{
 			if (preg_match('/_buy/', $value))

@@ -33,7 +33,7 @@ class Downloads extends CI_Controller {
 			$date_array = array();
 			foreach ($dates as $date)
 			{
-				$date_array[$date['date_added']] = $date['date_added'];
+				$date_array[$date['Date']] = $date['Date'];
 			}
 			echo "From: &nbsp";
 			echo form_dropdown('date_from', $date_array);
@@ -90,10 +90,10 @@ class Downloads extends CI_Controller {
 							case 'json':
 								foreach ($fetch as $row)
 								{
-									$jsondata[] = array('Date' => $row['date_added'],
-										'Hallmark Gold' => $row['hallmark_amt'],
-										'Tejabi GOld' => $row['tejabi_amt'],
-										'Silver' => $row['silver_amt']
+									$jsondata[] = array('Date' => $row['Date'],
+										'Hallmark Gold' => $row['Hallmark'],
+										'Tejabi GOld' => $row['Tejabi'],
+										'Silver' => $row['Silver']
 									);
 								}
 
@@ -143,7 +143,7 @@ class Downloads extends CI_Controller {
 								break;
 						}
 					}
-					elseif ($table == 'final')
+					elseif ($table == 'forex')
 					{
 						switch ($format)
 						{
@@ -151,8 +151,8 @@ class Downloads extends CI_Controller {
 
 								foreach ($fetch as $row)
 								{
-									$jsondata[] = array('date_added' => $row['date_added'],
-										'IC_buy' => $row['IC_buy'], 'IC_sell' => $row['IC_sell'], 'USD_buy' => $row['USD_buy'], 'USD_sell' => $row['USD_sell'], 'EUR_buy' => $row['EUR_buy'], 'EUR_sell' => $row['EUR_sell'], 'GBP_buy' => $row['GBP_buy'], 'GBP_sell' => $row['GBP_sell'], 'CHF_buy' => $row['CHF_buy'], 'CHF_sell' => $row['CHF_sell'], 'AUD_buy' => $row['USD_buy'], 'AUD_sell' => $row['AUD_sell'], 'CAD_buy' => $row['CAD_buy'], 'CAD_sell' => $row['CAD_sell'], 'SGD_buy' => $row['SGD_buy'], 'SGD_sell' => $row['SGD_sell'], 'JPY_buy' => $row['JPY_buy'], 'JPY_sell' => $row['JPY_sell'], 'CNY_buy' => $row['CNY_buy'], 'CNY_sell' => $row['CNY_sell'], 'SEK_buy' => $row['SEK_buy'], 'DKK_buy' => $row['DKK_buy'], 'HKD_buy' => $row['HKD_buy'], 'SAR_buy' => $row['SAR_buy'], 'SAR_sell' => $row['SAR_sell'], 'QAR_buy' => $row['QAR_buy'], 'QAR_sell' => $row['QAR_sell'], 'THB_buy' => $row['THB_buy'], 'THB_sell' => $row['THB_sell'], 'AED_buy' => $row['AED_buy'], 'AED_sell' => $row['AED_sell'], 'MYR_buy' => $row['MYR_buy'], 'MYR_sell' => $row['MYR_sell'], 'KPW_buy' => $row['KPW_buy'], 'KPW_sell' => $row['KPW_sell']
+									$jsondata[] = array('Date' => $row['Date'],
+										'IC Buy' => $row['IC_buy'], 'IC Sell' => $row['IC_sell'], 'USD Buy' => $row['USD_buy'], 'USD Sell' => $row['USD_sell'], 'EUR Buy' => $row['EUR_buy'], 'EUR Sell' => $row['EUR_sell'], 'GBP Buy'=> $row['GBP_buy'], 'GBP Sell' => $row['GBP_sell'], 'CHF buy' => $row['CHF_buy'], 'CHF Sell' => $row['CHF_sell'], 'AUD Buy' => $row['AUD_buy'], 'AUD Sell' => $row['AUD_sell'], 'CAD Buy' => $row['CAD_buy'], 'CAD Sell' => $row['CAD_sell'], 'SGD Buy' => $row['SGD_buy'], 'SGD Sell' => $row['SGD_sell'], 'JPY Buy' => $row['JPY_buy'], 'JPY Sell' => $row['JPY_sell'], 'CNY Buy' => $row['CNY_buy'], 'CNY Sell' => $row['CNY_sell'], 'SEK Buy' => $row['SEK_buy'], 'DKK Buy' => $row['DKK_buy'], 'HKD Buy' => $row['HKD_buy'], 'SAR Buy' => $row['SAR_buy'], 'SAR Sell' => $row['SAR_sell'], 'QAR Buy' => $row['QAR_buy'], 'QAR Sell' => $row['QAR_sell'], 'THB Buy' => $row['THB_buy'], 'THB Sell' => $row['THB_sell'], 'AED Buy' => $row['AED_buy'], 'AED Sell' => $row['AED_sell'], 'MYR Buy' => $row['MYR_buy'], 'MYR Sell' => $row['MYR_sell'], 'KPW Buy' => $row['KPW_buy'], 'KPW Sell' => $row['KPW_sell']
 									);
 								}
 								force_download('forex.json', json_encode($jsondata));
@@ -169,7 +169,7 @@ class Downloads extends CI_Controller {
 
 									$XML .= "\t<row>\n";
 									$index = 0;
-
+									
 									foreach ($row as $cell)
 									{
 										// escaping illegal characters
@@ -177,6 +177,11 @@ class Downloads extends CI_Controller {
 										$cell = str_replace("<", "&lt;", $cell);
 										$cell = str_replace(">", "&gt;", $cell);
 										$cell = str_replace("\"", "&quot;", $cell);
+
+										$field[$index] = str_replace('_buy', ' Buy', $field[$index]);
+										$field[$index] = str_replace('_sell',' Sell', $field[$index]);
+										
+
 										$col_name = $field[$index];
 										$XML .= "\t\t<" . $col_name . ">" . $cell . "</" . $col_name . ">\n";
 										$index++;

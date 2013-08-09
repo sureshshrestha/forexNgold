@@ -4,7 +4,7 @@
 			var selTable = $(this).val();
 			$.ajax({
 //				url: "downloads/table_call",
-				url: "http://localhost/forex_ci/downloads/table_call",
+				url: "<?= base_url() ?>downloads/table_call",
 				async: false,
 				type: "POST",
 				data: "field_type=" + selTable,
@@ -19,11 +19,11 @@
 
 <div class="container">
 	<left>
-		<div class="row-fluid" style="margin:3px;padding:10px;height:300px">
-			<div class="span6" style="background-color: white;">
-
-				<h3><u>Download files as your need:</u></h3>
+		<div class="row-fluid" id="row_dn">
+			<div class="span6" id="dn_span6">
 				<center>
+				<h3>Download File</h3>
+				
 					<?php echo form_open(base_url() . 'downloads/main'); ?>
 					<table style="border:0px;padding:10px">
 						<tr>
@@ -65,8 +65,11 @@
 					</table>
 				</center>
 			</div>
-			<div class="span6" >
-				<h3><u>Download Instructions:</u></h3>
+		</left>
+			<div class="span5" >
+			
+					<h3>Download Instructions</h3>
+					
 				<ul>
 					<li>Choose the required file format.</li>
 					<li>Choose the field type.</li>
@@ -74,7 +77,9 @@
 					<li>Data range should be valid.</li>
 					<li>All fields are required.</li>
 				</ul>
+			
 			</div>
 		</div>
-	</left>
+	
+	
 </div>

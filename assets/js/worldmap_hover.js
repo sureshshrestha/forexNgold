@@ -1,14 +1,9 @@
 var forextoday;
 var map = L.mapbox.map('map').setView([37.8, -6], 2);
-//map.minZoom = 2;
-//map.maxZoom = 4;
-//map.weight = 2;
-//map.inertia = true;
 var popup = new L.Popup({autoPan: false});
 var legend = L.mapbox.legendControl({position: 'bottomleft'}).addLegend(getLegendHTML()).addTo(map);
-//var jsonurl = 'http://localhost/forex_ci/lib/forex_today.js';
+var jsonurl = 'http://localhost/forex_ci/lib/forex_today.json';
 
-//console.log(json.date_added);
 
 var worldLayer = L.geoJson(worldData, {
     style: getStyle,
@@ -30,36 +25,32 @@ var cloudmade = L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{
 function getStyle(feature) {
 //    $.getJSON(jsonurl, function(data) {
 ////        console.log(feature.properties.SOVEREIGNT);
-//        var con = feature.properties.SOVEREIGNT;
-//        var a;
+//        con = feature.properties.SOVEREIGNT;
 //        switch (con)
 //        {
 //            case 'India':
 //                {
-//////                    console.log(con);
-//                    a = json.IC_buy;
-//                    console.log(a);
-//////                    getColor(a);
+////                    console.log(con);
+//                    a = data.IC_buy;
+////                    console.log(a);
+////                    getColor(a);
 //                }
-//                return;
+//
 //            case 'United States of America':
 //                {
-//                    a = json.USD_buy;
-//                    console.log(a);
-////                    return getColor(a);
+//                    a = data.USD_buy;
+//                    return getColor(a);
 //                }
-//                return;
 //        }
 //    });
 //    console.log(data.IC_buy);
-    
     return{
         weight: 0.5,
         opacity: 1,
         color: '#696c6a', //light green
         dashArray: '',
         fillOpacity: 0.7,
-        fillColor: getColor(111)
+        fillColor: getColor()
                 //feature.properties.Forex
     };
 }
@@ -223,7 +214,7 @@ function mousemove(e) {
                 sel_country = selected_country;
         }
         if (!price == '')
-            popup.setContent('<h5>' + sel_country + ' NRs. ' + price + '.</h5>');
+            popup.setContent('<h4>' + sel_country + ' NRs. ' + price + '.</h4>');
 //            layer.bindPopup(sel_country + ' : NRs ' + price);
 //		else
 //			layer.bindPopup(sel_country + 'Unavailable.');

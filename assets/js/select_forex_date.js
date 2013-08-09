@@ -5,7 +5,7 @@ $(document).ready(function(){
       $.ajax({
         url: "charts/drop_down_forex",    
         async: false,     
-        type: "POST",         
+        type: "POST",       
         data: "forex_date="+selDate,    
         dataType: "json",       
         success: function chart(data) {

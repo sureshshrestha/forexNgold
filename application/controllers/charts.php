@@ -11,7 +11,7 @@ class Charts extends CI_Controller {
 
 	function index()
 	{
-		$this->forex_json();
+//		$this->forex_json();
 		$this->chart_dual_stock();
 
 		$this->load->view('header');
@@ -39,30 +39,30 @@ class Charts extends CI_Controller {
 		file_put_contents($file, $result);
 	}
 
-	function forex_json()
-	{
-		$query = $this->chart->history_charts();
-		foreach ($query as $values)
-		{
-
-			$key = array_keys($values);
-			$row[] = array($values[$key[0]], $values[$key[1]], $values[$key[2]], $values[$key[3]], $values[$key[4]], $values[$key[5]], $values[$key[6]], $values[$key[7]], $values[$key[8]], $values[$key[9]], $values[$key[10]]);
-		}
-		$result = json_encode($row, JSON_NUMERIC_CHECK);
-		$file = FCPATH . 'lib/history_forex.json';
-		file_put_contents($file, $result);
-	}
+//	function forex_json()
+//	{
+//		$query = $this->chart->history_charts();
+//		foreach ($query as $values)
+//		{
+//
+//			$key = array_keys($values);
+//			$row[] = array($values[$key[0]], $values[$key[1]], $values[$key[2]], $values[$key[3]], $values[$key[4]], $values[$key[5]], $values[$key[6]], $values[$key[7]], $values[$key[8]], $values[$key[9]], $values[$key[10]]);
+//		}
+//		$result = json_encode($row, JSON_NUMERIC_CHECK);
+//		$file = FCPATH . 'lib/history_forex.json';
+//		file_put_contents($file, $result);
+//	}
 
 	function drop_down_forex()
 	{
 		if ($_POST)
 		{
-			$date_added = $_POST['forex_date'];
+			$Date = $_POST['forex_date'];
 
-			//$date_added='2013-7-11';
-			$col_name = $this->chart->get_fields('final');
-			$col_buy = 'UNIX_TIMESTAMP(date_added)*1000,';
-			$col_sell = 'UNIX_TIMESTAMP(date_added)*1000,';
+			//$Date='2013-7-11';
+			$col_name = $this->chart->get_fields('forex');
+			$col_buy = 'UNIX_TIMESTAMP(Date)*1000,';
+			$col_sell = 'UNIX_TIMESTAMP(Date)*1000,';
 			foreach ($col_name as $value)
 			{
 				if (preg_match('/_buy/', $value))
@@ -74,8 +74,8 @@ class Charts extends CI_Controller {
 					$col_sell .= $value . ',';
 				}
 			}
-			$buy = $this->chart->get_charts_forex($col_buy, $date_added);
-			$sell = $this->chart->get_charts_forex($col_sell, $date_added);
+			$buy = $this->chart->get_charts_forex($col_buy, $Date);
+			$sell = $this->chart->get_charts_forex($col_sell, $Date);
 			$forex_buy['name'] = 'Buy';
 			foreach ($buy as $values)
 			{
@@ -102,10 +102,10 @@ class Charts extends CI_Controller {
 	{
 		if ($_POST)
 		{
-			$date_added = $_POST['date_added'];
+			$Date = $_POST['gold_date'];
 			$result = array();
 			$series = array();
-			$query = $this->chart->gold_chart_form($date_added);
+			$query = $this->chart->gold_chart_form($Date);
 			//var_dump($query);
 			$field = $this->chart->get_fields('goldpricenepal');
 			for ($index = 1; $index < 4; $index++)

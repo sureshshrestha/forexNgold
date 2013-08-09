@@ -1,5 +1,5 @@
 $(function() {
-  $.getJSON('http://localhost/forex_ci/lib/us_gold_stock.json', function(data) {
+  $.getJSON('../lib/us_gold_stock.json', function(data) {
 
     
     var gold = [],

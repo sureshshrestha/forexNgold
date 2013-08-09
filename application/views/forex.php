@@ -1,27 +1,56 @@
+<style>
+    #map {
+                width: 1024px;
+                height: 500px
+            }
 
-<link rel="stylesheet" type="text/css" href="assets/css/sidebar.css" />
-<div class="container" style="margin-top: 3px">
+            .map-legend i {
+                width: 18px;
+                height: 18px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+            }
+            .leaflet-popup-close-button{
+                display: none;
+            }
+
+            .leaflet-popup-content-wrapper{
+                pointer-events: none;
+            }
+</style>
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/sidebar.css" />
+<div class="container" >
+	
+	<div class="hero-unit" >
+		<div id="map" tabindex="0"></div>
+	</div>
+
+
+	
+
+	<hr>
 	<div class="row-fluid" >    
 		<div class="span12">
-			<div  style="float: right;margin-right:20px;margin-bottom: 0px">
+			<div  id="fx_date">
 				<?php
 				$forexs = array();
 				foreach ($forex_dates as $date_forex)
 				{
-					$forexs[$date_forex['date_added']] = $date_forex['date_added'];
+					$forexs[$date_forex['Date']] = $date_forex['Date'];
 				}
 				echo form_dropdown('forex_date', $forexs, '', 'id="forex_date"');
 				?>
 			</div><br>
 
-			<center><div id="current" style="height: 500px;border:1px solid black;margin:20px 20px 0px 20px"></div></center>
+			<center><div id="current" class="fx_current"></div></center>
 
 		</div>
 	</div>		
-	<div class="row-fluid" >
-		<div class="span12" style="margin:20px">
+	<div class="row-fluid" id="btn_border">
+		<div class="span12" >
 			<center>
-				<p  style="text-color:white;text-align:center">The buying and selling rate of different foreign currency 
+				<p >The buying and selling rate of different foreign currency 
 					on any specified date can be found from the above graphs. <br>
 					This graph also compares the difference in converted currency 
 					between the different foreign currency.
@@ -30,14 +59,15 @@
 			</center>
 		</div>				
 	</div>
-	<div class="row-fluid">
-		<hr>
-	</div> 
-	<div class="row-fluid" >
-		<div class="span8" style="float:left">
-			<div id="container" style="height: 500px;border:1px solid black;margin:20px  "></div>
+	
+
+	<div class="row-fluid" id="btn_border">
+		<div class="span8" >
+			
+			<div id="container" class="fx_cont"></div>
+			
 		</div>
-		<div  class="span3" style="margin:20px  ;border:solid black 1px;width:305px">
+		<div  class="span4" id="fx_span3">
 			<a class="twitter-timeline" href="https://twitter.com/search?q=%23forex" data-widget-id="362480211285143552">Tweets about "#forex"</a>
 			<script>!function(d, s, id) {
 					var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -50,7 +80,43 @@
 				}(document, "script", "twitter-wjs");</script>
 		</div>
 	</div>
+<hr>
+ 
+	<div class="row-fluid">
+
+
+		<center>
+		<p ><h5>COMPARE THE CHANGES OF DIFFERENT FOREIGN CURRENCIES</h5></p>
+		</center>
+	</div>
+	
+
+<div class="row-fluid" >	
+
+		<div class="span12" >
+			<div class="unit_comp">
+				<center>
+				<div id="unit"  ></div>
+				</center>
+			</div>   
+		</div >
+		
+	</div>
+<div class="row-fluid" >
+			<div class="span12">
+			<CENTER>
+			<button id="euro"  class="btn btn-primary" >EURO</button>
+			<button id="pound" class="btn btn-primary">POUND</button>
+			<button id="franc" class="btn btn-primary">FRANC</button><BR>
+			<button id="aud" class="btn btn-primary">AUD</button>
+			<button id="cad" class="btn btn-primary">CAD</button>
+			<button id="yen" class="btn btn-primary">YEN</button>
+			</CENTER>
+			</div>
+
+		</div>
 </div>		
+
 
 <ul id="demo_menu2" >
 	<li><h5><u>Forex Naming Conventions</u></h5></li>
@@ -77,8 +143,8 @@
 	<li><h6>** JPY in 10 units</h6></li>
 </ul>
 
-<script type="text/javascript" src="assets/js/jquery.sidebar.js"></script>
-<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/jquery.sidebar.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	$("ul#demo_menu1").sidebar();
 	$("ul#demo_menu2").sidebar({
@@ -103,6 +169,13 @@
 	});
 </script>
 
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/current_forex.js"></script>
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/history_forex.js"></script>
-<script type="text/javascript" src="http://localhost/forex_ci/assets/js/select_forex_date.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/current_forex.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/history_forex.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/select_forex_date.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/unit_forex_compare.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/countries.js"></script>
+<!--<script type="text/javascript" src="<?= base_url() ?>assets/js/leaflet.js"></script>-->
+<script type="text/javascript" src="<?= base_url() ?>assets/js/mapbox.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/worldmap.js"></script>
+<script type="text/javascript" src='<?= base_url() ?>lib/forex_today.js'></script>
+

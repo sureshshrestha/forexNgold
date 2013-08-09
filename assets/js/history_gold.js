@@ -1,5 +1,5 @@
 $(function() {
-	$.getJSON('http://localhost/forex_ci/lib/history_gold.json', function(data) {
+	$.getJSON('lib/history_gold.json', function(data) {
 
 		
 		var hallmark = [],
@@ -77,14 +77,14 @@ $(function() {
 					data: hallmark,
 					color: '#FF0000',
 					marker: {
-						symbol: 'url(http://localhost/forex_ci/assets/img/symbols/gold.png)'
+						symbol: 'url(assets/img/symbols/gold.png)'
 					}
 				}, {
 					type: 'spline',
 					name: 'Tejabi Gold',
 					data: tejabi,
 					marker: {
-						symbol: 'url(http://localhost/forex_ci/assets/img/symbols/gold.png)'
+						symbol: 'url(assets/img/symbols/gold.png)'
 					}
 				},
 				{
@@ -92,7 +92,7 @@ $(function() {
 					name: 'Silver',
 					data: silver,
 					marker: {
-						symbol: 'url(http://localhost/forex_ci/assets/img/symbols/silver.png)'
+						symbol: 'url(assets/img/symbols/silver.png)'
 								//  symbol: 'url(<?=base_url()?>assets/img/sun.png)'
 					}
 				}
@@ -100,13 +100,6 @@ $(function() {
 		});
 
 
-		$('#toggle-opposite').click(function() {
-			var opposite = true;
-			var chart = $('#history_gold').highcharts();
-			chart.yAxis[0].update({
-				opposite: opposite
-			});
-			opposite = !opposite;
-		});
+		
 	});
 });

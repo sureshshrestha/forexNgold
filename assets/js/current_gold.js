@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $.getJSON('http://localhost/forex_ci/lib/current_gold.json', function(json){
+    $.getJSON('lib/current_gold.json', function(json){
 
         var chart = new Highcharts.Chart({
             chart: {

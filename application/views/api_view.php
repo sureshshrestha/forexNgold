@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="assets/css/sidebar2.css" />
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/sidebar2.css" />
 
 <style>
 	#navbar{
@@ -42,6 +42,9 @@
 
 		background-color: grey;
 	} 
+	#api_main{
+		float:left;width:780px; position: relative; margin-left:250px;
+	}
 
 	table td,tr,th{
 		padding:2px;
@@ -58,31 +61,41 @@
 
 </style>
 
-<div class="container" style="margin-top: 3px">
+<div class="container">
 	<div class="row-fluid"  > 
 		<div id="navbar">
 
-			<a href="#api"><h6>Api Documentation</h6></a>
-			<a href="#notes"><h6>Notes Before Use</h6></a>
-			<a href="#params"><h6>Parameters Used</h6></a>
-			<a href="#ways"><h6>Ways To Use Api</h6></a>
-			<a href="#response"><h6>Response Types</h6></a>
-			<a href="#success"><h6>Success Response</h6></a>
-			<a href="#error"><h6>Error Responses</h6></a>
-			<button ><a href="http://localhost/forex_ci/downloads/download_api_doc"><h6>Download Documentation</h6></a></button>
+			<a href="#api_p"><h5>API Documentation</h5></a>
+			<a href="#notes"><h5>Notes Before Use</h5></a>
+			<a href="#params"><h5>Parameters Used</h5></a>
+			<a href="#ways"><h5>Ways To Use Api</h5></a>
+			<a href="#response"><h5>Response Types</h5></a>
+			<a href="#success"><h5>Success Response</h5></a>
+			<a href="#error"><h5>Error Responses</h5></a>
+			<button ><a href="<?= base_url() ?>downloads/download_api_doc"><h5>Download Documentation</h5></a></button>
 		</div>
 
 
-		<div style="float:left;width:780px; position: relative; margin-left:250px" >
-			<div id="api">
-				<h3>Api Documentation</h3>
-				<p>This api uses RESTFUL API as a base. The functionality are mostly provided within it. To use our api , the users should have an api key.
-					For this they should visit our website and ask for one key.
-					The key will be send to user’s email id.</p>
+		<div id="api_main" >
+			<div id="api_p">
+				 <h3>Api Documentation</h3>
+        <p>This api uses RESTFUL API as a base. The functionality are mostly provided within it. Since this API gives API developer and the client application the choice of data formats to use, it is opened up to a
+          much wider audience and can be used with more programming languages and systems. The formats
+          supported with our API are:
+          <ul>
+            <li>json – useful for JavaScript and increasingly PHP apps.</li>
+            <li>xml – almost any programming language can read XML</li>
+            <li>php – Representation of PHP code </li>
+          </ul>
+          
+    <img src='<?=base_url()?>assets/img/format.png' style="width:900"alt="">
+   <br><t> To use our api , the users should have an api key.For this they should visit our website and ask for one key.The
+          The key will be send to user’s email id.</p>
+				<HR>			
 			</div>
 
 			<div id="notes">
-				<h3>Notes Before Use</h3>
+				<h4>Notes Before Use</h4>
 
 				<ol>
 					<li> User can get single key for with single email id registered.Api key will be send to user's email id!</li>
@@ -91,9 +104,10 @@
 					<li>The api default format is json.</li>
 					<li>The api format can be generated in other formats as xml,csv, php & html. For getting other formats: add “&format=’desired format’.</li>
 				</ol>
+				<HR>
 			</div>
 			<div id="params">
-				<h3>Parameters Used</h3>
+				<h4>Parameters Used</h4>
 				<table >
 					<tr>
 						<th>Parameters</th>
@@ -124,9 +138,10 @@
 						<td>For changing api format(xml, json, csv, html)</td>
 					</tr>
 				</table>
+				<HR>
 			</div>
 			<div id="ways">
-				<h3>Ways to use our api</h3>
+				<h4>Ways to use our api</h4>
 				<ol>
 					<u><li>For particular date:</u></li>
 					<p>forex_ci/apis/forex?key=***********&date= YYYY-MM-DD<br>Or<br>
@@ -143,9 +158,10 @@
 						forex_ci/apis/metal?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD format=***</p>
 
 				</ol>
+				<HR>
 			</div>
 			<div id="response">
-				<h3>Response Types</h3>
+				<h4>Response Types</h4>
 				<table >
 					<tr>
 						<th>HTTP response codes</th>
@@ -172,9 +188,10 @@
 						<td>Not allowed</td>
 					</tr>
 				</table>
+				<HR>
 			</div>
 			<div id="success">
-				<h3>Success Response</h3>
+				<h4>Success Response</h4>
 				<table >
 					<tr>
 						<th>Type</th>
@@ -185,9 +202,10 @@
 						<td>{"status":"true","message":"valid","result":[{...}]}</td>
 					</tr>
 				</table>
+				<hr>
 			</div>
 			<div id="error">
-				<h3>Error Responses</h3>
+				<h4>Error Responses</h4>
 				<table >
 					<tr>
 						<th>Error type</th>
@@ -222,6 +240,7 @@
 			</div>
 		</div>
 	</div>
+	
 </div>
 
 
@@ -235,7 +254,7 @@
 				<input type="submit" value="submit" id="submit"/>
 				</form>
 
-				<img src="http://localhost/forex_ci/assets/img/ajax-loader.gif" style="display: none;" id="loading_image">
+				<img src="<?= base_url() ?>assets/img/ajax-loader.gif" style="display: none;" id="loading_image">
 				</ul>
 
 				<script type="text/javascript">
@@ -277,8 +296,8 @@
 					});
 				</script>
 
-				<script type="text/javascript" src="assets/js/jquery.sidebar.js"></script>
-				<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+				<script type="text/javascript" src="<?=base_url()?>assets/js/jquery.sidebar.js"></script>
+      <script type="text/javascript" src="<?=base_url()?>assets/js/jquery-ui.min.js"></script>
 				<script type="text/javascript">
 					$("ul#demo_menu1").sidebar();
 					$("ul#demo_menu22").sidebar({

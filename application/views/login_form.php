@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="http://localhost/forex_ci/assets/css/style_login.css" type="text/css" media="screen" charset="utf-8">
+<style>  @import url('<?=base_url()?>assets/css/style_login.css');</style>
 <div id="login_form">
 	<h2>Login, Admin!</h2>
 	<?php 

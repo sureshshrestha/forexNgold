@@ -12,8 +12,8 @@ class api extends CI_Model
         }
 
 
-	function log_api_requests($ip,$key){
-			mysql_query("INSERT INTO `api_log` (`ip`,`key`,`date`,`requests`) VALUES ('{$ip}','{$key}',NOW(),0) ON DUPLICATE KEY UPDATE `requests` = `requests` + 1") or die(mysql_error());  
+	function log_api_requests($ip,$keys){
+			mysql_query("INSERT INTO `api_log` (`ip`,`key`,`date`,`requests`) VALUES ('{$ip}','{$keys}',NOW(),0) ON DUPLICATE KEY UPDATE `requests` = `requests` + 1") or die(mysql_error());  
 				
 		
 }  
@@ -24,19 +24,19 @@ class api extends CI_Model
 		
 }       
 	function select_date($date,$table) {
-			$this->db->select()->from($table)->where('date_added',$date);
+			$this->db->select()->from($table)->where('Date',$date);
 			$query = $this->db->get();
 			return $query->result_array();
 		}
 
 	function date_range($date_from, $date_to,$table) {
-			$this->db->select()->from($table)->where('date_added BETWEEN "'. date('Y-m-d', strtotime($date_from)). '" and "'. date('Y-m-d', strtotime($date_to)).'"');//between($date_from, $date_to);
+			$this->db->select()->from($table)->where('Date BETWEEN "'. date('Y-m-d', strtotime($date_from)). '" and "'. date('Y-m-d', strtotime($date_to)).'"');//between($date_from, $date_to);
 			$query = $this->db->get();
 			return $query->result_array();
 	}
 
 	function get_current($table) {
-				$this->db->select()->from($table)->order_by('date_added','desc')->limit(1);;
+				$this->db->select()->from($table)->order_by('Date','desc')->limit(1);;
 				$query = $this->db->get();
 				return $query->result_array();
 			}

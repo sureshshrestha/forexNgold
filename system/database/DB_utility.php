@@ -210,6 +210,9 @@ class CI_DB_utility extends CI_DB_forge {
 		// First generate the headings from the table column names
 		foreach ($query->list_fields() as $name)
 		{
+			$name= str_replace('date_added','Date', $name);
+			$name= str_replace('_buy',' Buy', $name);
+			$name= str_replace('_sell',' Sell', $name);
 			$out .= $enclosure.str_replace($enclosure, $enclosure.$enclosure, $name).$enclosure.$delim;
 		}
 

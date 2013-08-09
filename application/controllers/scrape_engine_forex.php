@@ -16,7 +16,7 @@ class Scrape_engine_forex extends CI_Controller {
 		$url = 'http://nrb.org.np/detailexchrate.php?YY=&&MM=&&DD=&&YY1=&&MM1=&&DD1=#';
 		$html = file_get_html($url);
 		//create an array for forex
-		$forexArray = array('date_added' => null,
+		$forexArray = array('Date' => null,
 			'IC_buy' => null, 'IC_sell' => null, 'USD_buy' => null, 'USD_sell' => null, 'EUR_buy' => null, 'EUR_sell' => null, 'GBP_buy' => null, 'GBP_sell' => null, 'CHF_buy' => null, 'CHF_sell' => null, 'AUD_buy' => null, 'AUD_sell' => null, 'CAD_buy' => null, 'CAD_sell' => null, 'SGD_buy' => null, 'SGD_sell' => null, 'JPY_buy' => null, 'JPY_sell' => null, 'CNY_buy' => null, 'CNY_sell' => null, 'SEK_buy' => null, 'DKK_buy' => null, 'HKD_buy' => null, 'SAR_buy' => null, 'SAR_sell' => null, 'QAR_buy' => null, 'QAR_sell' => null, 'THB_buy' => null, 'THB_sell' => null, 'AED_buy' => null, 'AED_sell' => null, 'MYR_buy' => null, 'MYR_sell' => null, 'KPW_buy' => null, 'KPW_sell' => null,
 		);
 		$fData = array();
@@ -36,7 +36,7 @@ class Scrape_engine_forex extends CI_Controller {
 		foreach ($fData as $key => $value)
 		{
 			// $i= strip_tags(trim($value[0]));
-			$forexArray['date_added'] = $value[0];
+			$forexArray['Date'] = $value[0];
 			$forexArray['IC_buy'] = $value[1];
 			$forexArray['IC_sell'] = $value[2];
 			$forexArray['USD_buy'] = $value[3];
@@ -79,7 +79,7 @@ class Scrape_engine_forex extends CI_Controller {
 		$html->clear();
 		unset($html);
 
-		if ($forexArray['date_added'] == '' || $forexArray['date_added'] == 'null' || $forexArray['date_added'] == null)
+		if ($forexArray['Date'] == '' || $forexArray['Date'] == 'null' || $forexArray['Date'] == null)
 		{
 			$forexArray['result'] = "There is problem while scraping data!!";
 			exit;
@@ -88,10 +88,10 @@ class Scrape_engine_forex extends CI_Controller {
 		{
 			$this->forex->date_check($forexArray);
 			//to get forex_today.json
-			$jsondata = json_encode($forexArray);
+			$jsondata = json_encode($forexArray, JSON_NUMERIC_CHECK);
 			$filesite = FCPATH . '/lib/forex_today.json';
 			file_put_contents($filesite, $jsondata);
-			$forexArray['result'] = ('Forex data scraped successfully and Forex json file of ' . $forexArray['date_added'] . ' is created successfully.');
+			$forexArray['result'] = ('Forex data scraped successfully and Forex json file of ' . $forexArray['Date'] . ' is created successfully.');
 		}
 
 		$this->load->view('header_admin');

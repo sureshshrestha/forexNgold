@@ -1,5 +1,5 @@
 $(function() {
-	$.getJSON('http://localhost/forex_ci/lib/history_forex.json', function(data) {
+	$.getJSON('lib/history_forex.json', function(data) {
 
 		// split the data set into var id
 		var ic = [],
@@ -146,14 +146,14 @@ Highcharts.setOptions({
 					data: ic,
 					marker: {
 						y: 0,
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/rupee.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/rupee.png)'
 					}
 				}, {
 					type: 'spline',
 					name: 'EUR',
 					data: euro,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/euro.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/euro.png)'
 					}
 				},
 				{
@@ -163,7 +163,7 @@ Highcharts.setOptions({
 					marker: {
 						x: 10.0,
 						y: 10.0,
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/dollar.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/dollar.png)'
 					}
 
 				}, {
@@ -171,7 +171,7 @@ Highcharts.setOptions({
 					name: 'GBP',
 					data: pound,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/pound.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/pound.png)'
 					}
 
 				}, {
@@ -184,7 +184,7 @@ Highcharts.setOptions({
 					name: 'CNY',
 					data: yen,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/yen.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/yen.png)'
 					}
 				},
 				{
@@ -192,7 +192,7 @@ Highcharts.setOptions({
 					name: 'HKD',
 					data: hk_dollar,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/korean.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/korean.png)'
 					}
 				}
 
@@ -201,7 +201,7 @@ Highcharts.setOptions({
 					name: 'AUD',
 					data: aud,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/euro.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/euro.png)'
 					}
 				},
 				{
@@ -211,7 +211,7 @@ Highcharts.setOptions({
 					marker: {
 						x: 10.0,
 						y: 10.0,
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/dollar.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/dollar.png)'
 					}
 
 				}, {
@@ -219,7 +219,7 @@ Highcharts.setOptions({
 					name: 'SGD',
 					data: sgd,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/pound.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/pound.png)'
 					}
 
 				}, {
@@ -232,7 +232,7 @@ Highcharts.setOptions({
 					name: 'SEK',
 					data: sek,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/yen.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/yen.png)'
 					}
 				},
 				{
@@ -240,7 +240,7 @@ Highcharts.setOptions({
 					name: 'DKK',
 					data: dkk,
 					marker: {
-						//symbol: 'url(http://localhost/forex_ci/assets/img/symbols/korean.png)'
+						//symbol: 'url(<?=base_url()?>assets/img/symbols/korean.png)'
 					}
 				}
 			]

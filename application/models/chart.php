@@ -13,21 +13,21 @@ class Chart extends CI_Model {
 
 	function history_charts()
 	{
-		$this->db->select('UNIX_TIMESTAMP(date_added)*1000, (IC_buy)/100,USD_buy,EUR_buy,GBP_buy,CHF_buy,JPY_buy,HKD_buy,AUD_buy,CAD_buy,SGD_buy,SAR_buy,SEK_buy,DKK_buy')->from('final')->order_by('date_added', 'asc');
+		$this->db->select('UNIX_TIMESTAMP(Date)*1000, (IC_buy)/100,USD_buy,EUR_buy,GBP_buy,CHF_buy,JPY_buy,HKD_buy,AUD_buy,CAD_buy,SGD_buy,SAR_buy,SEK_buy,DKK_buy')->from('forex')->order_by('Date', 'asc');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
 	function get_charts($field)
 	{
-		$this->db->select($field)->from('final')->order_by('date_added', 'desc')->limit(1);
+		$this->db->select($field)->from('forex')->order_by('Date', 'desc')->limit(1);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
-	function get_charts_forex($field, $date_added)
+	function get_charts_forex($field, $Date)
 	{
-		$this->db->select($field)->from('final')->where('date_added', $date_added)->order_by('date_added', 'desc')->limit(1);
+		$this->db->select($field)->from('forex')->where('Date', $Date)->order_by('Date', 'desc')->limit(1);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -46,14 +46,14 @@ class Chart extends CI_Model {
 
 	function history_gold()
 	{
-		$this->db->select('UNIX_TIMESTAMP(date_added)*1000,hallmark_amt,tejabi_amt,silver_amt')->from('goldpricenepal')->order_by('date_added', 'asc');
+		$this->db->select('UNIX_TIMESTAMP(Date)*1000,Hallmark,Tejabi,Silver')->from('goldpricenepal')->order_by('Date', 'asc');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
 	function gold_chart()
 	{
-		$this->db->select()->from('goldpricenepal')->order_by('date_added', 'desc')->limit(1);
+		$this->db->select()->from('goldpricenepal')->order_by('Date', 'desc')->limit(1);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -61,28 +61,28 @@ class Chart extends CI_Model {
 	function dual_chart()
 	{
 		$this->db->distinct();
-		$this->db->select('UNIX_TIMESTAMP(final.date_added)*1000,final.USD_buy,goldpricenepal.hallmark_amt')->from('final')->join('goldpricenepal', 'final.date_added=goldpricenepal.date_added', 'inner');
+		$this->db->select('UNIX_TIMESTAMP(forex.Date)*1000,forex.USD_buy,goldpricenepal.Hallmark')->from('forex')->join('goldpricenepal', 'forex.Date=goldpricenepal.Date', 'inner');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
-	public function gold_chart_form($date_added)
+	public function gold_chart_form($Date)
 	{
-		$this->db->select()->from('goldpricenepal')->where('date_added', $date_added)->limit(1);
+		$this->db->select()->from('goldpricenepal')->where('Date', $Date)->limit(1);
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
 	function range($table, $date_from, $date_to)
 	{
-		$this->db->select()->from($table)->where('date_added BETWEEN "' . date('Y-m-d', strtotime($date_from)) . '" and "' . date('Y-m-d', strtotime($date_to)) . '"');
+		$this->db->select()->from($table)->where('Date BETWEEN "' . date('Y-m-d', strtotime($date_from)) . '" and "' . date('Y-m-d', strtotime($date_to)) . '"');
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
 	function csv_range($table, $date_from, $date_to)
 	{
-		$this->db->select()->from($table)->where('date_added BETWEEN "' . date('Y-m-d', strtotime($date_from)) . '" and "' . date('Y-m-d', strtotime($date_to)) . '"');
+		$this->db->select()->from($table)->where('Date BETWEEN "' . date('Y-m-d', strtotime($date_from)) . '" and "' . date('Y-m-d', strtotime($date_to)) . '"');
 		$query = $this->db->get();
 		return $query;
 	}
@@ -90,7 +90,7 @@ class Chart extends CI_Model {
 	public function get_date($var)
 	{
 		$this->db->distinct();
-		$this->db->select('date_added')->from($var)->order_by('date_added', 'desc');
+		$this->db->select('Date')->from($var)->order_by('Date', 'desc');
 		$query = $this->db->get();
 		return $query->result_array();
 	}

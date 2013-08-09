@@ -125,15 +125,15 @@
 			<div class="span6"  >
 				<div class="thumbnail" >
 					<h5>About Us</h5>
-					<p > 
+					<p> 
 						This website provides its users with past and present forex, gold & silver prices.
 
 						We aspire to be helpful to people who are seeking current foreign	 exchange rates, gold&silver prices and banker, investors, international traders 
 						and economist by providing relavant graphical visualization of past forex and gold data.  
 
 						This website is developed as an intership project by students of <a href="http://www.ku.edu.np">Kathmandu University </a> at 
-						<a href="http://www.younginnovations.com.np">Young Innovations Pvt. Ltd.</a>
-
+						<a href="http://www.younginnovations.com.np">Young Innovations Pvt. Ltd.</a> under the supervision of Ms. Manisha Karmacharya.
+							
 					</p>
 					Find our project in <a href="https://github.com/sur3s/forexNgold">https://github.com/sur3s/forexNgold</a>
 				</div>
@@ -172,7 +172,6 @@
 						<p>Email: isnimeshmishra@gmail.com<br>
 						</p>
 						<div style="margin-left:0px">
-							<!--<h1>Follow us: </h1>-->
 							<ul class="social">
 								<li ><a class="icon-facebook" href="https://www.facebook.com/NimeshMDMishra" target="_blank"></a>
 								</li>

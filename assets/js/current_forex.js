@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $.getJSON('http://localhost/forex_ci/lib/current_forex.json', function(json){
+    $.getJSON('lib/current_forex.json', function(json){
 
        var chart = new Highcharts.Chart({
             chart: {

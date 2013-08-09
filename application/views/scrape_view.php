@@ -25,6 +25,8 @@
 		<div>
 			<?php IF (isset($result))echo $result; ?>
 			<?php IF (isset($result_gold))echo $result_gold; ?>
+			<?php IF (isset($exist))echo $exist; ?>
+			<?php IF (isset($existGold))echo $existGold; ?>
 		</div>
 	</div>
 </div>

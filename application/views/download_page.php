@@ -4,7 +4,7 @@
 			var selTable = $(this).val();
 			$.ajax({
 //				url: "downloads/table_call",
-				url: "<?= base_url() ?>downloads/table_call",
+				url: "downloads/table_call",
 				async: false,
 				type: "POST",
 				data: "field_type=" + selTable,
@@ -43,7 +43,7 @@
 							<td><?php
 								$tables = array(
 									'' => '',
-									'final' => 'Forex',
+									'forex' => 'Forex',
 									'goldpricenepal' => 'GoldnSilver'
 								);
 

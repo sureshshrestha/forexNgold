@@ -41,7 +41,7 @@ class metal extends CI_Model {
 
 		if ($ql->num_rows() > 0)
 		{
-			
+			return true;
 		}
 		else
 		{

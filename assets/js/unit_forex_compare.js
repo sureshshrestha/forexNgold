@@ -108,7 +108,7 @@ $(function() {
 				}
 			},
 			series: [{
-					type: 'spline',
+					type: 'area',
 					name: 'US Dollar',
 					data: dollar
 				}]
@@ -118,10 +118,10 @@ $(function() {
 			$('#euro').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
-				type: 'spline',
+				type: 'area',
 				name: 'EURO',
 				data: euro,
-				color: '#660'
+				//color: '#660'
 			});
 			// $(this).attr('disabled', true);
 			$(this).text('Remove Euro');
@@ -148,10 +148,10 @@ $(function() {
 		$('#pound').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
-				type: 'spline',
+				type: 'area',
 				name: 'POUND',
 				data: pound,
-				color: '#990'
+				//color: '#990'
 			});
 			// $(this).attr('disabled', true);
 			$(this).text('Remove Pound');
@@ -177,7 +177,7 @@ $(function() {
 		$('#franc').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
-				type: 'spline',
+				type: 'area',
 				name: 'Franc',
 				data: franc,
 				 color: '#000'
@@ -207,7 +207,7 @@ $(function() {
 		$('#yen').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
-				type: 'spline',
+				type: 'area',
 				name: 'YEN',
 				data: yen,
 				color: '#800'
@@ -237,7 +237,7 @@ $(function() {
 		$('#hk').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
-				type: 'spline',
+				type: 'area',
 				name: 'HK',
 				data: hk,
 				color: '#990'
@@ -266,7 +266,7 @@ $(function() {
 		$('#aud').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
-				type: 'spline',
+				type: 'area',
 				name: 'AUD',
 				data: aud,
 				color: '#000'
@@ -294,7 +294,7 @@ $(function() {
 		$('#cad').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
-				type: 'spline',
+				type: 'area',
 				name: 'CAD',
 				data: cad,
 				color: '#990'

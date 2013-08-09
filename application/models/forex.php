@@ -46,7 +46,7 @@ class forex extends CI_Model {
 
 		if ($ql->num_rows() > 0)
 		{
-			
+			return TRUE;
 		}
 		else
 		{

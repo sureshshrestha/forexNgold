@@ -120,27 +120,29 @@
 
 <ul id="demo_menu2" >
 	<li><h5><u>Forex Naming Conventions</u></h5></li>
-	<li>AED : <em> UAE dirham</em></li>
-	<li>AUD : <em>Australian dollar</em></li>
-	<li>CAD : <em>Canadian dollar</em> </li>
-	<li>CHF : <em>Swiss franc	</em></li>
-	<li>CNY : <em>Chinese yuan renminbi </em></li>
-	<li>DKK : <em>Danish krone </em> </li>
-	<li>EUR : <em>EU euro	</em></li>
-	<li>GBP : <em>British pound</em>	</li>
-	<li>HKD : <em>Hong Kong SAR dollar </em></li>
-	<li>INR : <em>Indian rupee*</em>	</li>
-	<li>JPY : <em>Japanese yen**</em>	</li>
-	<li>KPW : <em>North Korean won</em> </li>
-	<li>MYR : <em>Malaysian ringgit </em></li>
-	<li>NPR : <em>Nepalese rupee</em>	</li>
-	<li>SAR : <em>Saudi riyal </em></li>
-	<li>SGD : <em>Singapore dollar </em></li>
-	<li>SEK : <em>Swedish krona </em></li>
-	<li>THB : <em>Thai baht </em></li>
-	<li>USD : <em>US dollar</em>	</li>
-	<li><h6>* INR in 100 units</h6></li>
-	<li><h6>** JPY in 10 units</h6></li>
+	<li>AED :  <em> UAE dirham</em></li>
+	<li>AUD :  <em>Australian dollar</em></li>
+	<li>CAD :  <em>Canadian dollar</em> </li>
+	<li>CHF :  <em>Swiss franc	</em></li>
+	<li>CNY :  <em>Chinese yuan renminbi </em></li>
+	<li>DKK :  <em>Danish krone </em> </li>
+	<li>EUR :  <em>EU euro	</em></li>
+	<li>GBP :  <em>British pound</em>	</li>
+	<li>HKD :  <em>Hong Kong SAR dollar </em></li>
+	<li>INR :  <em>Indian rupee*</em>	</li>
+	<li>JPY :  <em>Japanese yen**</em>	</li>
+	<li>KPW :  <em>South Korean won***</em> </li>
+	<li>MYR :  <em>Malaysian ringgit </em></li>
+	<li>NPR :  <em>Nepalese rupee</em>	</li>
+	<li>SAR :  <em>Saudi riyal </em></li>
+	<li>SGD :  <em>Singapore dollar </em></li>
+	<li>SEK :  <em>Swedish krona </em></li>
+	<li>THB :  <em>Thai baht </em></li>
+<li>USD : <em>US dollar</em>	</li>
+<br>    
+    <li>* INR in 100 units</li>
+	<li>** JPY in 10 units</li>
+	<li>*** KPW in 100 units</li>
 </ul>
 
 <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery.sidebar.js"></script>

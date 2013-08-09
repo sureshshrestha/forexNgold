@@ -6,13 +6,68 @@ class Scrape_engine_forex extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('forex');
+		$this->load->model('chart');
 		$this->load->helper('simple_html_dom');
 	}
+function forex_json()
+	{
+		$query = $this->chart->history_charts();
+		foreach ($query as $values)
+		{
+			$key = array_keys($values);
+			$row[] = array($values[$key[0]], $values[$key[1]], $values[$key[2]], $values[$key[3]], $values[$key[4]], $values[$key[5]], $values[$key[6]], $values[$key[7]], $values[$key[8]], $values[$key[9]], $values[$key[10]], $values[$key[11]], $values[$key[12]], $values[$key[13]]);
+		}
 
+
+		$result = json_encode($row, JSON_NUMERIC_CHECK);
+		$file = FCPATH . 'lib/history_forex.json';
+		file_put_contents($file, $result);
+	}
+    function current_forex()
+	{
+		$col_name = $this->chart->get_fields('forex');
+		$col_buy = 'UNIX_TIMESTAMP(Date)*1000,';
+		$col_sell = 'UNIX_TIMESTAMP(Date)*1000,';
+		foreach ($col_name as $value)
+		{
+			if (preg_match('/_buy/', $value))
+			{
+				$col_buy .= $value . ',';
+			}
+			elseif (preg_match('/_sell/', $value))
+			{
+				$col_sell .= $value . ',';
+			}
+		}
+		$buy = $this->chart->get_charts($col_buy);
+		$sell = $this->chart->get_charts($col_sell);
+
+		$forex_buy['name'] = 'Buy';
+		foreach ($buy as $values)
+		{
+			$key = array_keys($values);
+			$forex_buy['data'] = array($values[$key[1]], $values[$key[2]], $values[$key[3]], $values[$key[4]], $values[$key[5]], $values[$key[6]], $values[$key[7]], $values[$key[8]], $values[$key[9]], $values[$key[10]], $values[$key[14]], $values[$key[15]], $values[$key[16]], $values[$key[17]], $values[$key[18]], $values[$key[19]], $values[$key[11]], $values[$key[12]], $values[$key[13]]);
+		}
+
+		$forex_sell['name'] = 'Sell';
+		foreach ($sell as $values)
+		{
+			$key = array_keys($values);
+			$forex_sell['data'] = array($values[$key[1]], $values[$key[2]], $values[$key[3]], $values[$key[4]], $values[$key[5]], $values[$key[6]], $values[$key[7]], $values[$key[8]], $values[$key[9]], $values[$key[10]], $values[$key[11]], $values[$key[12]], $values[$key[13]], $values[$key[14]], $values[$key[15]], $values[$key[16]]);
+		}
+		$result = array();
+		array_push($result, $forex_buy);
+		array_push($result, $forex_sell);
+
+		$result = json_encode($result, JSON_NUMERIC_CHECK);
+		//print $result;
+		$file = FCPATH . 'lib/current_forex.json';
+		file_put_contents($file, $result);
+	}
 	function index()
 	{
 
-		//$url = 'http://localhost/amr/forex_ci/lib/forex.html';
+//		$url = 'http://localhost/forex_ci/lib/forex.html';
 		$url = 'http://nrb.org.np/detailexchrate.php?YY=&&MM=&&DD=&&YY1=&&MM1=&&DD1=#';
 		$html = file_get_html($url);
 		//create an array for forex
@@ -86,12 +141,17 @@ class Scrape_engine_forex extends CI_Controller {
 		}
 		else
 		{
-			$this->forex->date_check($forexArray);
+			if(($this->forex->date_check($forexArray)) == TRUE){
+                $forexArray['exist'] = ('Forex data already exists of ' . $forexArray['Date'] . '.');
+            }ELSE{
+            $this->forex_json();
+            $this->current_forex();
 			//to get forex_today.json
 			$jsondata = json_encode($forexArray, JSON_NUMERIC_CHECK);
 			$filesite = FCPATH . '/lib/forex_today.json';
 			file_put_contents($filesite, $jsondata);
 			$forexArray['result'] = ('Forex data scraped successfully and Forex json file of ' . $forexArray['Date'] . ' is created successfully.');
+            }
 		}
 
 		$this->load->view('header_admin');

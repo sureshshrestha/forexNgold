@@ -1,11 +1,13 @@
 var forextoday;
-var map = L.mapbox.map('map').setView([37.8, -6], 2);
+var map = L.mapbox.map('map', '', {minZoom:2, maxZoom:4}).setView([37.8, -6], 2);
+
 //map.minZoom = 2;
 //map.maxZoom = 4;
 //map.weight = 2;
 //map.inertia = true;
 var popup = new L.Popup({autoPan: false});
 var legend = L.mapbox.legendControl({position: 'bottomleft'}).addLegend(getLegendHTML()).addTo(map);
+var mapTitle = L.mapbox.legendControl({position: 'topright'}).addLegend(getLegendHTMLTitle()).addTo(map);
 //var jsonurl = 'http://localhost/forex_ci/lib/forex_today.js';
 
 //console.log(json.date_added);
@@ -59,7 +61,7 @@ function getStyle(feature) {
         color: '#696c6a', //light green
         dashArray: '',
         fillOpacity: 0.7,
-        fillColor: getColor(111)
+        fillColor: getColor(feature.properties.Forex)
                 //feature.properties.Forex
     };
 }
@@ -110,7 +112,7 @@ function mousemove(e) {
     var selected_country = '';
     var sel_country = '';
     selected_country = layer.feature.properties.SOVEREIGNT;
-//    var jsonurl = 'http://localhost/forex_ci/lib/forex_today.json';
+    var jsonurl = 'lib/forex_today.json';
     $.getJSON(jsonurl, function(data) {
         var price = '';
         var sel_country = '';
@@ -253,4 +255,8 @@ function getLegendHTML() {
                 from + (to ? '&ndash;' + to : '+'));
     }
     return '<span>Exchange Rates in NRs.</span><br>' + labels.join('<br>');
+}
+function getLegendHTMLTitle() {
+//    labels.push('<i>Forex rates visualizations in World Map</i> ' );
+    return '<span><strong><h5 style="background-opacity:0.4">Forex rates visualizations in World Map</h5></strong></span>';
 }

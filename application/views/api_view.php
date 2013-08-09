@@ -42,7 +42,7 @@
 
 		background-color: grey;
 	} 
-	#api_main{
+	#API_main{
 		float:left;width:780px; position: relative; margin-left:250px;
 	}
 
@@ -65,21 +65,21 @@
 	<div class="row-fluid"  > 
 		<div id="navbar">
 
-			<a href="#api_p"><h5>API Documentation</h5></a>
+			<a href="#API_p"><h5>API Documentation</h5></a>
 			<a href="#notes"><h5>Notes Before Use</h5></a>
 			<a href="#params"><h5>Parameters Used</h5></a>
-			<a href="#ways"><h5>Ways To Use Api</h5></a>
+			<a href="#ways"><h5>Ways To Use API</h5></a>
 			<a href="#response"><h5>Response Types</h5></a>
 			<a href="#success"><h5>Success Response</h5></a>
 			<a href="#error"><h5>Error Responses</h5></a>
-			<button ><a href="<?= base_url() ?>downloads/download_api_doc"><h5>Download Documentation</h5></a></button>
+			<button ><a href="<?= base_url() ?>downloads/download_API_doc"><h5>Download Documentation</h5></a></button>
 		</div>
 
 
-		<div id="api_main" >
-			<div id="api_p">
-				 <h3>Api Documentation</h3>
-        <p>This api uses RESTFUL API as a base. The functionality are mostly provided within it. Since this API gives API developer and the client application the choice of data formats to use, it is opened up to a
+		<div id="API_main" >
+			<div id="API_p">
+				 <h4>API Documentation</h4>
+        <p>This API uses RESTFUL API as a base. The functionality are mostly provided within it. Since this API gives API developer and the client application the choice of data formats to use, it is opened up to a
           much wider audience and can be used with more programming languages and systems. The formats
           supported with our API are:
           <ul>
@@ -88,8 +88,8 @@
             <li>php – Representation of PHP code </li>
           </ul>
           
-    <img src='<?=base_url()?>assets/img/format.png' style="width:900"alt="">
-   <br><t> To use our api , the users should have an api key.For this they should visit our website and ask for one key.The
+    <img src='<?=base_url()?>assets/img/format.png' style="padding:10px 0px"alt="">
+   <br><t> To use our API , the users should have an API key.For this they should visit our website and ask for one key.The
           The key will be send to user’s email id.</p>
 				<HR>			
 			</div>
@@ -98,11 +98,11 @@
 				<h4>Notes Before Use</h4>
 
 				<ol>
-					<li> User can get single key for with single email id registered.Api key will be send to user's email id!</li>
+					<li> User can get single key for with single email id registered.API key will be send to user's email id!</li>
 					<li> User can used a particular key for limited numbers i.e. '20' in our case.</li>
 					<li>The date should be entered as YYYY-MM-DD. Other format are not taken.</li>
-					<li>The api default format is json.</li>
-					<li>The api format can be generated in other formats as xml,csv, php & html. For getting other formats: add “&format=’desired format’.</li>
+					<li>The API default format is json.</li>
+					<li>The API format can be generated in other formats as xml,csv, php & html. For getting other formats: add “&format=’desired format’.</li>
 				</ol>
 				<HR>
 			</div>
@@ -115,11 +115,11 @@
 					</tr>
 					<tr>
 						<td>forex</td>
-						<td>For getting api related to foreign exchange data</td>
+						<td>For getting API related to foreign exchange data</td>
 					</tr>
 					<tr>
 						<td>metal</td>
-						<td>For getting api related to gold and silver</td>
+						<td>For getting API related to gold and silver</td>
 					</tr>
 					<tr>
 						<td>date</td>
@@ -135,27 +135,27 @@
 					</tr>
 					<tr>
 						<td>format</td>
-						<td>For changing api format(xml, json, csv, html)</td>
+						<td>For changing API format(xml, json, csv, html)</td>
 					</tr>
 				</table>
 				<HR>
 			</div>
 			<div id="ways">
-				<h4>Ways to use our api</h4>
+				<h4>Ways to use our API</h4>
 				<ol>
 					<u><li>For particular date:</u></li>
-					<p>forex_ci/apis/forex?key=***********&date= YYYY-MM-DD<br>Or<br>
-						forex_ci/ apis/metal?key=***********&date= YYYY-MM-DD</p>
+					<p>forex_ci/APIs/forex?key=***********&date= YYYY-MM-DD<br>Or<br>
+						forex_ci/ APIs/metal?key=***********&date= YYYY-MM-DD</p>
 
 					<u><li>For particular date range:</u></li>
-					<p>forex_ci/apis/forex?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD<br>Or<br>
-						forex_ci/apis/metal?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD</p>
+					<p>forex_ci/APIs/forex?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD<br>Or<br>
+						forex_ci/APIs/metal?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD</p>
 
 					<u><li>For getting in other formats:</u></li>
-					<p>forex_ci/apis/forex?key=***********&date= YYYY-MM-DD&format=***<br>Or<br>
-						forex_ci/ apis/metal?key=***********&date= YYYY-MM-DD&format=***<br>&<br>
-						forex_ci/apis/forex?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD format=***<br>Or<br>
-						forex_ci/apis/metal?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD format=***</p>
+					<p>forex_ci/APIs/forex?key=***********&date= YYYY-MM-DD&format=***<br>Or<br>
+						forex_ci/ APIs/metal?key=***********&date= YYYY-MM-DD&format=***<br>&<br>
+						forex_ci/APIs/forex?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD format=***<br>Or<br>
+						forex_ci/APIs/metal?key=***********&start_date=YYYY-MM-DD&end_date= YYYY-MM-DD format=***</p>
 
 				</ol>
 				<HR>
@@ -217,7 +217,7 @@
 					</tr>
 					<tr>
 						<td>If no. of key usage exceeds</td>
-						<td>{"status":"false","message":"invalid","error":"You have reached limit to use  api"}</td>
+						<td>{"status":"false","message":"invalid","error":"You have reached limit to use  API"}</td>
 					</tr>
 					<tr>
 						<td>If date range is not valid</td>

@@ -9,12 +9,13 @@
 		<script type="text/javascript" src="<?= base_url() ?>assets/js/highcharts/jquery-1.7.1.min.js"></script>
 		<link rel="stylesheet" href="<?= base_url() ?>assets/css/mapbox.css">
 		<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/newcss.css">
-
-	
+        <link rel="icon" type="image/ico" href="<?= base_url() ?>assets/img/images.jpg">
+        
+        
 	</head>
 	<body  >
 		 
-	<header id="header"  style="background-color:#b5ac5f">
+	<header id="header"  style="background-color:#696969">
 		<div class="container">	
 			
 					

@@ -1,53 +1,53 @@
 $(function() {
 	$.getJSON('lib/history_forex.json', function(data) {
 		
-		var euro = [],
-		dollar = [],
-		pound = [],
-		franc = [],
-		yen = [],
-		hk = [],
-		aud = [],
-		cad = [],
-		sgd = [],
+		var EUR = [],
+		USD = [],
+		GBP = [],
+		CHF = [],
+		SGD = [],
+		HKD = [],
+		AUD = [],
+		CAD = [],
+		//SGD = [],
 		dataLength = data.length;
 
 		for (i = 0; i < dataLength; i++) {
-			dollar.push([
+			USD.push([
 				data[i][0], // the date
 				data[i][2] // the volume
 			]);
 
-			euro.push([
+			EUR.push([
 				data[i][0], // the date
 				data[i][3] // the volume
 			]);
-			pound.push([
+			GBP.push([
 				data[i][0], // the date
 				data[i][4] // the volume
 			]);
-			franc.push([
+			CHF.push([
 				data[i][0], // the date
 				data[i][5]
 			]);
-			yen.push([
-				data[i][0], // the date
-				data[i][6]
-			]);
-			hk.push([
+//			SGD.push([
+//				data[i][0], // the date
+//				data[i][6]
+//			]);
+			HKD.push([
 				data[i][0], // the date
 				data[i][7]
 			]);
-			aud.push([
+			AUD.push([
 				data[i][0], // the date
 				data[i][8]
 			]);
 
-			cad.push([
+			CAD.push([
 				data[i][0], // the date
 				data[i][9]
 			]);
-			sgd.push([
+			SGD.push([
 				data[i][0], // the date
 				data[i][10]
 			]);
@@ -63,14 +63,14 @@ $(function() {
 		var chart = new Highcharts.StockChart({
         chart: {
         renderTo: 'unit',
-        type:'spline'
+       // type:'areaspline'
                   
     },
 			rangeSelector: {
 				selected: 1
 			},
 			title: {
-				text: 'Forex Comparisons with dollar in NRs.'
+				text: 'Forex Comparisons with USD in NRs.'
 			},
 
 			credits: {
@@ -83,6 +83,7 @@ $(function() {
               text: 'Data from Nepal Rastriya Bank'
             },
 			yAxis: [{
+				type: 'logarithmic',
 					title: {
 						text: 'Nrs value'
 					}
@@ -109,215 +110,278 @@ $(function() {
 			},
 			series: [{
 					type: 'area',
-					name: 'US Dollar',
-					data: dollar
+					name: 'USD',
+					data: USD
 				}]
 
 		});
 	
-			$('#euro').toggle(function() {
+			$('#EUR').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
 				type: 'area',
-				name: 'EURO',
-				data: euro,
-				//color: '#660'
+				name: 'EUR',
+				data: EUR,
+				color: '#000',
+				fillColor : {
+					linearGradient : {
+						x1: 0, 
+						y1: 0, 
+						x2: 0, 
+						y2: 1
+					},
+					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+				}
 			});
 			// $(this).attr('disabled', true);
-			$(this).text('Remove Euro');
-			$('#franc').attr('disabled', true);
-			$('#pound').attr('disabled', true);
-			$('#aud').attr('disabled', true);
-			$('#cad').attr('disabled', true);
-			$('#hk').attr('disabled', true);
-			$('#yen').attr('disabled', true);
+			$(this).text('Remove EUR');
+			$('#CHF').attr('disabled', true);
+			$('#GBP').attr('disabled', true);
+			$('#AUD').attr('disabled', true);
+			$('#CAD').attr('disabled', true);
+			$('#HKD').attr('disabled', true);
+			$('#SGD').attr('disabled', true);
 		}, function() {
 			var chart = $('#unit').highcharts();
 			chart.series[2].remove();
-			$(this).text('EURO');
-			$('#franc').attr('disabled', false);
-			$('#pound').attr('disabled', false);
-			$('#aud').attr('disabled', false);
-			$('#cad').attr('disabled', false);
-			$('#hk').attr('disabled', false);
-			$('#yen').attr('disabled', false);
+			$(this).text('EUR');
+			$('#CHF').attr('disabled', false);
+			$('#GBP').attr('disabled', false);
+			$('#AUD').attr('disabled', false);
+			$('#CAD').attr('disabled', false);
+			$('#HKD').attr('disabled', false);
+			$('#SGD').attr('disabled', false);
 
 		});
 
 
-		$('#pound').toggle(function() {
+		$('#GBP').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
 				type: 'area',
-				name: 'POUND',
-				data: pound,
-				//color: '#990'
+				name: 'GBP',
+				data: GBP,
+				color: '#000',
+				fillColor : {
+					linearGradient : {
+						x1: 0, 
+						y1: 0, 
+						x2: 0, 
+						y2: 1
+					},
+					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+				}
 			});
 			// $(this).attr('disabled', true);
-			$(this).text('Remove Pound');
-			$('#euro').attr('disabled', true);
-			$('#franc').attr('disabled', true);
-			$('#aud').attr('disabled', true);
-			$('#cad').attr('disabled', true);
-			$('#hk').attr('disabled', true);
-			$('#yen').attr('disabled', true);
+			$(this).text('Remove GBP');
+			$('#EUR').attr('disabled', true);
+			$('#CHF').attr('disabled', true);
+			$('#AUD').attr('disabled', true);
+			$('#CAD').attr('disabled', true);
+			$('#HKD').attr('disabled', true);
+			$('#SGD').attr('disabled', true);
 
 		}, function() {
 			var chart = $('#unit').highcharts();
 			chart.series[2].remove();
-			$(this).text(' Pound');
-			$('#euro').attr('disabled', false);
-			$('#franc').attr('disabled', false);
-			$('#cad').attr('disabled', false);
-			$('#aud').attr('disabled', false);
-			$('#hk').attr('disabled',false);
-			$('#yen').attr('disabled', false);
+			$(this).text(' GBP');
+			$('#EUR').attr('disabled', false);
+			$('#CHF').attr('disabled', false);
+			$('#CAD').attr('disabled', false);
+			$('#AUD').attr('disabled', false);
+			$('#HKD').attr('disabled',false);
+			$('#SGD').attr('disabled', false);
 		});
 
-		$('#franc').toggle(function() {
+		$('#CHF').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
 				type: 'area',
-				name: 'Franc',
-				data: franc,
-				 color: '#000'
+				name: 'CHF',
+				data: CHF,
+				 color: '#000',
+				 fillColor : {
+					linearGradient : {
+						x1: 0, 
+						y1: 0, 
+						x2: 0, 
+						y2: 1
+					},
+					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+				}
 			});
 			// $(this).attr('disabled', true);
-			$(this).text('Remove FRANC');
-			$('#euro').attr('disabled', true);
-			$('#aud').attr('disabled', true);
-			$('#pound').attr('disabled', true);
-			$('#cad').attr('disabled', true);
-			$('#hk').attr('disabled',true);
-			$('#yen').attr('disabled', true);
+			$(this).text('Remove CHF');
+			$('#EUR').attr('disabled', true);
+			$('#AUD').attr('disabled', true);
+			$('#GBP').attr('disabled', true);
+			$('#CAD').attr('disabled', true);
+			$('#HKD').attr('disabled',true);
+			$('#SGD').attr('disabled', true);
 
 
 		}, function() {
 			var chart = $('#unit').highcharts();
 			chart.series[2].remove();
-			$(this).text('Pound');
-			$('#euro').attr('disabled', false);
-			$('#aud').attr('disabled', false);
-			$('#cad').attr('disabled', false);
-			$('#pound').attr('disabled', false);
-			$('#hk').attr('disabled',false);
-			$('#yen').attr('disabled', false);
+			$(this).text('CHF');
+			$('#EUR').attr('disabled', false);
+			$('#AUD').attr('disabled', false);
+			$('#CAD').attr('disabled', false);
+			$('#GBP').attr('disabled', false);
+			$('#HKD').attr('disabled',false);
+			$('#SGD').attr('disabled', false);
 		});
 
-		$('#yen').toggle(function() {
+		$('#SGD').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
 				type: 'area',
-				name: 'YEN',
-				data: yen,
-				color: '#800'
+				name: 'SGD',
+				data: SGD,
+				color: '#000',
+				fillColor : {
+					linearGradient : {
+						x1: 0, 
+						y1: 0, 
+						x2: 0, 
+						y2: 1
+					},
+					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+				}
 			});
 			// $(this).attr('disabled', true);
-			$(this).text('Remove YEN');
-			$('#euro').attr('disabled', true);
-			$('#franc').attr('disabled', true);
-			$('#pound').attr('disabled', true);
-			$('#cad').attr('disabled', true);
-			$('#hk').attr('disabled',true);
-			$('#aud').attr('disabled', true);
+			$(this).text('Remove SGD');
+			$('#EUR').attr('disabled', true);
+			$('#CHF').attr('disabled', true);
+			$('#GBP').attr('disabled', true);
+			$('#CAD').attr('disabled', true);
+			$('#HKD').attr('disabled',true);
+			$('#AUD').attr('disabled', true);
 
 		}, function() {
 			var chart = $('#unit').highcharts();
 			chart.series[2].remove();
 			$(this).text('YEN');
-			$('#euro').attr('disabled', false);
-			$('#franc').attr('disabled', false);
-			$('#pound').attr('disabled', false);
-			$('#cad').attr('disabled', false);
-			$('#hk').attr('disabled',false);
-			$('#aud').attr('disabled', false);
+			$('#EUR').attr('disabled', false);
+			$('#CHF').attr('disabled', false);
+			$('#GBP').attr('disabled', false);
+			$('#CAD').attr('disabled', false);
+			$('#HKD').attr('disabled',false);
+			$('#AUD').attr('disabled', false);
 
 		});
 
-		$('#hk').toggle(function() {
+		$('#HKD').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
 				type: 'area',
-				name: 'HK',
-				data: hk,
-				color: '#990'
+				name: 'HKD',
+				data: HKD,
+				color: '#000',
+				fillColor : {
+					linearGradient : {
+						x1: 0, 
+						y1: 0, 
+						x2: 0, 
+						y2: 1
+					},
+					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+				}
 			});
 			// $(this).attr('disabled', true);
-			$(this).text('Remove HK');
-			$('#euro').attr('disabled', true);
-			$('#franc').attr('disabled', true);
-			$('#pound').attr('disabled', true);
-			$('#aud').attr('disabled', true);
-			$('#yen').attr('disabled',true);
-			$('#cad').attr('disabled', true);
+			$(this).text('Remove HKD');
+			$('#EUR').attr('disabled', true);
+			$('#CHF').attr('disabled', true);
+			$('#GBP').attr('disabled', true);
+			$('#AUD').attr('disabled', true);
+			$('#SGD').attr('disabled',true);
+			$('#CAD').attr('disabled', true);
 
 		}, function() {
 			var chart = $('#unit').highcharts();
 			chart.series[2].remove();
-			$(this).text('HK');
-			$('#euro').attr('disabled', false);
-			$('#franc').attr('disabled', false);
-			$('#pound').attr('disabled', false);
-			$('#aud').attr('disabled', false);
-			$('#yen').attr('disabled',false);
-			$('#cad').attr('disabled', false);
+			$(this).text('HKD');
+			$('#EUR').attr('disabled', false);
+			$('#CHF').attr('disabled', false);
+			$('#GBP').attr('disabled', false);
+			$('#AUD').attr('disabled', false);
+			$('#SGD').attr('disabled',false);
+			$('#CAD').attr('disabled', false);
 		});
 
-		$('#aud').toggle(function() {
+		$('#AUD').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
 				type: 'area',
 				name: 'AUD',
-				data: aud,
-				color: '#000'
+				data: AUD,
+				color: '#000',
+				fillColor : {
+					linearGradient : {
+						x1: 0, 
+						y1: 0, 
+						x2: 0, 
+						y2: 1
+					},
+					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+				}
 			});
 			// $(this).attr('disabled', true);
 			$(this).text('Remove AUD');
-			$('#euro').attr('disabled', true);
-			$('#franc').attr('disabled', true);
-			$('#pound').attr('disabled', true);
-			$('#cad').attr('disabled', true);
-			$('#hk').attr('disabled', true);
-			$('#yen').attr('disabled', true);
+			$('#EUR').attr('disabled', true);
+			$('#CHF').attr('disabled', true);
+			$('#GBP').attr('disabled', true);
+			$('#CAD').attr('disabled', true);
+			$('#HKD').attr('disabled', true);
+			$('#SGD').attr('disabled', true);
 
 		}, function() {
 			var chart = $('#unit').highcharts();
 			chart.series[2].remove();
 			$(this).text('AUD');
-			$('#euro').attr('disabled', false);
-			$('#franc').attr('disabled', false);
-			$('#pound').attr('disabled', false);
-			$('#cad').attr('disabled', false);
-			$("#hk").attr('disabled', false);
-			$('#yen').attr('disabled', false);
+			$('#EUR').attr('disabled', false);
+			$('#CHF').attr('disabled', false);
+			$('#GBP').attr('disabled', false);
+			$('#CAD').attr('disabled', false);
+			$("#HKD").attr('disabled', false);
+			$('#SGD').attr('disabled', false);
 		});
-		$('#cad').toggle(function() {
+		$('#CAD').toggle(function() {
 			var chart = $('#unit').highcharts();
 			chart.addSeries({
 				type: 'area',
 				name: 'CAD',
-				data: cad,
-				color: '#990'
+				data: CAD,
+				color: '#000',
+				fillColor : {
+					linearGradient : {
+						x1: 0, 
+						y1: 0, 
+						x2: 0, 
+						y2: 1
+					},
+					stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+				}
 			});
 			// $(this).attr('disabled', true);
 			$(this).text('Remove CAD');
-			$('#euro').attr('disabled', true);
-			$('#franc').attr('disabled', true);
-			$('#pound').attr('disabled', true);
-			$('#aud').attr('disabled', true);
-			$('#yen').attr('disabled', true);
-			$('#hk').attr('disabled', true);
+			$('#EUR').attr('disabled', true);
+			$('#CHF').attr('disabled', true);
+			$('#GBP').attr('disabled', true);
+			$('#AUD').attr('disabled', true);
+			$('#SGD').attr('disabled', true);
+			$('#HKD').attr('disabled', true);
 
 		}, function() {
 			var chart = $('#unit').highcharts();
 			chart.series[2].remove();
 			$(this).text('CAD');
-			$('#euro').attr('disabled', false);
-			$('#franc').attr('disabled', false);
-			$('#pound').attr('disabled', false);
-			$('#aud').attr('disabled', false);
-			$('#hk').attr('disabled', false);
-			$('#yen').attr('disabled', false);
+			$('#EUR').attr('disabled', false);
+			$('#CHF').attr('disabled', false);
+			$('#GBP').attr('disabled', false);
+			$('#AUD').attr('disabled', false);
+			$('#HKD').attr('disabled', false);
+			$('#SGD').attr('disabled', false);
 		});
 		
 

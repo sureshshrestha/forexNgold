@@ -1,5 +1,6 @@
 <div id="footer">
-   <p> <center>Courtesy of Team Young,2013</center></p>
+   <center>
+         <p id="footer_p">Courtesy of Team Young,2013</p></center>
 </body>
 <script>
 	jQuery(document).ready(function(e) {

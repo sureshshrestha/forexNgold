@@ -17,11 +17,27 @@
 	});
 </script>
 
-<div class="container">
+<div class="container" id="dwn_page">
 	<left>
-		<div class="row-fluid" id="row_dn">
-			<div class="span6" id="dn_span6">
-				<center>
+		<div class="row-fluid">
+			<div class="span6"  id="row_dn" >
+			
+			
+					<h3>Download Instructions</h3>
+					
+				<ul>
+					<li>Choose the required file format.</li>
+					<li>Choose the field type.</li>
+					<li>Select the data Range. </li>
+					<li>Data range should be valid.</li>
+					<li>All fields are required.</li>
+				</ul>
+			
+			</div>
+			
+		</left>
+	<div class="span5" id="dn_span6">		
+    <center>
 				<h3>Download File</h3>
 				
 					<?php echo form_open(base_url() . 'downloads/main'); ?>
@@ -64,22 +80,8 @@
 						</tr>
 					</table>
 				</center>
-			</div>
-		</left>
-			<div class="span5" >
-			
-					<h3>Download Instructions</h3>
-					
-				<ul>
-					<li>Choose the required file format.</li>
-					<li>Choose the field type.</li>
-					<li>Select the data Range. </li>
-					<li>Data range should be valid.</li>
-					<li>All fields are required.</li>
-				</ul>
-			
-			</div>
 		</div>
 	
-	
+	</div>
 </div>
+	

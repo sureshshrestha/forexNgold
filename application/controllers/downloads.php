@@ -178,8 +178,8 @@ class Downloads extends CI_Controller {
 										$cell = str_replace(">", "&gt;", $cell);
 										$cell = str_replace("\"", "&quot;", $cell);
 
-										$field[$index] = str_replace('_buy', ' Buy', $field[$index]);
-										$field[$index] = str_replace('_sell',' Sell', $field[$index]);
+										$field[$index] = str_replace('_buy', 'Buy', $field[$index]);
+										$field[$index] = str_replace('_sell','Sell', $field[$index]);
 										
 
 										$col_name = $field[$index];

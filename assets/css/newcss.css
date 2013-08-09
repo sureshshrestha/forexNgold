@@ -23,7 +23,7 @@
 		
 			
 			.mbar{
-				background-color: #b5ac5f;
+				background-color: ;
 			}
 			 .mn{
 			 	list-style-type:none;
@@ -31,13 +31,17 @@
 			 	margin:78px 10px 0px ;
 			 }
 			.mn a{
-				color:black;
+				color:#e2c20f;
 				text-decoration: italic;
 			}
 			 .mn a:hover{
-			 	color:#bababe;
+			 	color:white;
 			 	text-decoration: bold;
 			 }
+             
+             .mn a:active{
+                 color:black;
+             }
 			#mainnavbar,#forex, #gold, #api, #cont, #down{
 				padding-left: 20px;
 				display:inline;
@@ -98,7 +102,7 @@
 			}
 			.unit_comp{
 				min-height: 400px; 
-				border:1px solid black;
+				;
 				
 				margin:20px 20px 3px 20px;
 			}
@@ -152,27 +156,44 @@
 			#fx_date{
 	float: right;
 				}
-				.fx_current{
-					height: 500px;border:1px solid black;
-					margin-top: 19px;
+                #fx_current{
+                    margin-top: 19px;
+                }
+                .fx_current{
+					height: 500px;border:;
+					
 				}
 				#fx_id{
 					margin: 20px;
 				}
 				
 				.fx_cont{
-					height: 500px;border:1px solid black;margin:;
+					height: 500px;
 
 				}
 
-				#btn_border{
-					border-bottom: 1px solid black;
-					
-				}
-				
+                #footer{
+                    
+                    
+                    background-color: #696969;
+                    padding:10px;
+                    margin-top:10px;
+                    
+                }
+                
+                
+                #dwn_page{
+                    height:530px;
+                    
+                    
+                }
+                
+				#footer_p{
+                    color:#e2c20f;
+           }
 
 				#fx_span3{
-					margin:px  ;border:solid black 1px;width:305px;
+				border:solid black 1px;width:305px;
 				}
 
 				#fx_span8{
@@ -180,24 +201,35 @@
 
 				}
 				#history_gold{
-				border:1px solid black;height: 500px;
+				height: 500px;
 				}
 
 				#current_gold
-				{border:1px solid black;height: 500px;margin-top: 40px;}
+				{height: 493px;margin-top: 40px;}
 				#drop_down{
 					float:right;
 				}
 				#g_span4{
-					border:1px solid black;float:right;
+					float:right;
+                    margin-top: 40px;
 				}
 
 				#row_dn{
-				padding:10px;height:300px;
-				}
+				padding:10px;
+				 border:1px solid #a6a6a6;
+                
+                }
+                .btn{
+                    margin-top: 3px;
+                    margin-bottom: 3px;
+                    
+                    
+                }
 
 				#dn_span6{
-					background-color: white;
+					border:1px solid #a6a6a6;
+                    width:500px;
+                   
 				}
 				#tb_dn{
 					border:0px;padding:10px;
@@ -213,7 +245,7 @@
 				#l-pd{padding-left: 10px }
 
 				h1, h2, h3, h4, h5, h6 {
-					font-family: Arial;
+					font-family: "raleway",helvetica,Arial;
 					}
 
 
@@ -271,5 +303,15 @@
 			}
 
 			hr {
-				color:red;
+				border:1px solid #a6a6a6;
 			}
+            
+            
+            #forex_p{
+                padding:10px;
+            }
+            
+            
+            #gold_p{
+                padding: 10px;
+            }

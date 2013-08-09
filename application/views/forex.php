@@ -23,7 +23,7 @@
 <div class="container" >
 	
 	<div class="hero-unit" >
-		<div id="map" tabindex="0"></div>
+		<div id="map" tabindex="0" class="thumbnail"></div>
 	</div>
 
 
@@ -43,14 +43,15 @@
 				?>
 			</div><br>
 
-			<center><div id="current" class="fx_current"></div></center>
+			<center><div class="thumbnail" id="fx_current"><div id="current" class="fx_current"></div></div></center>
 
 		</div>
 	</div>		
-	<div class="row-fluid" id="btn_border">
+   
+	<div class="row-fluid" >
 		<div class="span12" >
 			<center>
-				<p >The buying and selling rate of different foreign currency 
+				<p id="forex_p" >The buying and selling rate of different foreign currency 
 					on any specified date can be found from the above graphs. <br>
 					This graph also compares the difference in converted currency 
 					between the different foreign currency.
@@ -58,16 +59,18 @@
 				</p>
 			</center>
 		</div>				
-	</div>
+	<hr>
+    </div>
 	
 
-	<div class="row-fluid" id="btn_border">
+	<div class="row-fluid" >
 		<div class="span8" >
-			
+			<div class="thumbnail">
 			<div id="container" class="fx_cont"></div>
 			
 		</div>
-		<div  class="span4" id="fx_span3">
+        </div>    
+		<div  class="span3" id="fx_span3">
 			<a class="twitter-timeline" href="https://twitter.com/search?q=%23forex" data-widget-id="362480211285143552">Tweets about "#forex"</a>
 			<script>!function(d, s, id) {
 					var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -79,14 +82,16 @@
 					}
 				}(document, "script", "twitter-wjs");</script>
 		</div>
-	</div>
+
+            </div>  
 <hr>
  
-	<div class="row-fluid">
+	
+<div class="row-fluid">
 
 
 		<center>
-		<p ><h5>COMPARE THE CHANGES OF DIFFERENT FOREIGN CURRENCIES</h5></p>
+		<h5>COMPARISON BETWEEN DIFFERENT FOREIGN CURRENCIES WITH USD</h5>
 		</center>
 	</div>
 	
@@ -96,7 +101,7 @@
 		<div class="span12" >
 			<div class="unit_comp">
 				<center>
-				<div id="unit"  ></div>
+				<div id="unit" class="thumbnail" ></div>
 				</center>
 			</div>   
 		</div >
@@ -105,12 +110,13 @@
 <div class="row-fluid" >
 			<div class="span12">
 			<CENTER>
-			<button id="euro"  class="btn btn-primary" >EURO</button>
-			<button id="pound" class="btn btn-primary">POUND</button>
-			<button id="franc" class="btn btn-primary">FRANC</button><BR>
-			<button id="aud" class="btn btn-primary">AUD</button>
-			<button id="cad" class="btn btn-primary">CAD</button>
-			<button id="yen" class="btn btn-primary">YEN</button>
+			<button id="EUR"  class="btn btn-primary" >EUR</button>
+			<button id="GBP" class="btn btn-primary">GBP</button>
+			<button id="CHF" class="btn btn-primary">CHF</button><BR>
+            
+			<button id="AUD" class="btn btn-primary">AUD</button>
+			<button id="CAD" class="btn btn-primary">CAD</button>
+			<button id="SGD" class="btn btn-primary">SGD</button>
 			</CENTER>
 			</div>
 

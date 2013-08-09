@@ -9,9 +9,9 @@
     </head>
     <body style="background-color:">
         <header>
-            <div class="row-fluid">
+            <div class="row-fluid" style="background-color:#696969">
                 <div class="span12" style="width:100%">
-                    <!--<img id="" src="<?= base_url() ?>assets/img/ts4.jpg" alt="image not shown;header 123.jpg" />-->
+                    <img id="" src="<?= base_url() ?>assets/img/ts4.jpg" alt="image not shown;header 123.jpg" />
                 </div>
             </div>
         </header>

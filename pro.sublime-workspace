@@ -1,0 +1,216 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fore",
+				"forex_buy"
+			],
+			[
+				"for",
+				"forex_buy  (variable)"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"q",
+				"query"
+			],
+			[
+				"str_re",
+				"str_replace"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"selected_items":
+		[
+			[
+				"control",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/wamp/www/forex_ci/application/controllers/apis.php",
+		"/D/wamp/www/forex_ci/application/controllers/charts.php",
+		"/D/wamp/www/forex_ci/application/controllers/downloads.php",
+		"/D/wamp/www/forex_ci/application/controllers/forex.php",
+		"/D/wamp/www/forex_ci/application/views/api_view.php",
+		"/D/wamp/www/forex_ci/application/views/download_page.php",
+		"/C/Users/HOME/Downloads/forex (3).json",
+		"/D/wamp/www/forex_ci/application/models/api.php",
+		"/D/wamp/www/forex_ci/application/models/forex.php",
+		"/D/wamp/www/forex_ci/application/models/chart.php",
+		"/C/Users/HOME/Downloads/metal.xml",
+		"/C/Users/HOME/Downloads/forex (3)",
+		"/D/wamp/www/forex_ci/application/libraries/Format.php",
+		"/C/Users/HOME/Downloads/gold&siver (4).xml",
+		"/C/Users/HOME/Downloads/forex (4).xml",
+		"/D/wamp/www/forex_ci/application/libraries/REST_Controller.php",
+		"/D/wamp/www/forex_ci/system/database/DB_utility.php",
+		"/D/wamp/www/forex_ci/application/config/rest.php",
+		"/C/Users/HOME/Downloads/forex (1)",
+		"/C/Users/HOME/Downloads/Compressed/REST_Service/REST_Service/application/views/widget_v1/json.php",
+		"/D/wamp/www/forex_ci/application/controllers/key.php",
+		"/C/Users/HOME/Downloads/gold&siver (2).xml",
+		"/C/Users/HOME/Downloads/gold&siver (3).xml",
+		"/C/Users/HOME/Downloads/gold&siver.csv",
+		"/C/Users/HOME/Downloads/gold&siver (1).xml",
+		"/C/Users/HOME/Documents/git/ForexNGold/forex_ci/application/controllers/downloads.php",
+		"/C/Users/HOME/Downloads/forex (3).xml",
+		"/C/Users/HOME/Downloads/forex(1).json",
+		"/C/Users/HOME/Downloads/forex (1).xml",
+		"/C/Users/HOME/Downloads/gold&siver.xml",
+		"/C/Users/HOME/Downloads/forex.xml",
+		"/C/Users/HOME/Downloads/forex (2).xml",
+		"/D/wamp/www/forex_ci/yipl_projct.sublime-workspace",
+		"/C/Users/HOME/Documents/test.html",
+		"/D/wamp/www/index.php"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\wamp\\www\\forex_ci\\application\\views",
+			"D:\\wamp\\www\\forex_ci\\application\\controllers",
+			"D:\\wamp\\www\\forex_ci\\application\\models",
+			"D:\\wamp\\www\\forex_ci\\application\\controllers",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"final",
+			"format",
+			"table",
+			"GOld",
+			"_check_limit",
+			"to_xml(",
+			"response",
+			"list_",
+			"json_encode",
+			"_buy",
+			"field"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"forex"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"db_utility",
+				"system/database/DB_utility.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 259.0,
+	"status_bar_visible": true
+}

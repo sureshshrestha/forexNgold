@@ -13,21 +13,33 @@ class Chart extends CI_Model {
 
 	function history_charts()
 	{
+<<<<<<< HEAD
 		$this->db->select('UNIX_TIMESTAMP(Date)*1000, IC_buy,USD_buy,EUR_buy,GBP_buy,CHF_buy,JPY_buy,HKD_buy,AUD_buy,CAD_buy,SGD_buy,SAR_buy,SEK_buy,DKK_buy')->from('forex')->order_by('Date', 'asc');
+=======
+		$this->db->select('UNIX_TIMESTAMP(date_added)*1000, (IC_buy)/100,USD_buy,EUR_buy,GBP_buy,CHF_buy,JPY_buy,HKD_buy,AUD_buy,CAD_buy,SGD_buy,SAR_buy,SEK_buy,DKK_buy')->from('forex')->order_by('date_added', 'asc');
+>>>>>>> 410f8fca42435a2a33c24aa2083e59953c661af2
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
 	function get_charts($field)
 	{
+<<<<<<< HEAD
 		$this->db->select($field)->from('forex')->order_by('Date', 'desc')->limit(1);
+=======
+		$this->db->select($field)->from('forex')->order_by('date_added', 'desc')->limit(1);
+>>>>>>> 410f8fca42435a2a33c24aa2083e59953c661af2
 		$query = $this->db->get();
 		return $query->result_array();
 	}
 
 	function get_charts_forex($field, $Date)
 	{
+<<<<<<< HEAD
 		$this->db->select($field)->from('forex')->where('Date', $Date)->order_by('Date', 'desc')->limit(1);
+=======
+		$this->db->select($field)->from('forex')->where('date_added', $date_added)->order_by('date_added', 'desc')->limit(1);
+>>>>>>> 410f8fca42435a2a33c24aa2083e59953c661af2
 		$query = $this->db->get();
 		return $query->result_array();
 	}
@@ -61,7 +73,11 @@ class Chart extends CI_Model {
 	function dual_chart()
 	{
 		$this->db->distinct();
+<<<<<<< HEAD
 		$this->db->select('UNIX_TIMESTAMP(forex.Date)*1000,forex.USD_buy,goldpricenepal.Hallmark')->from('forex')->join('goldpricenepal', 'forex.Date=goldpricenepal.Date', 'inner');
+=======
+		$this->db->select('UNIX_TIMESTAMP(forex.date_added)*1000,forex.USD_buy,goldpricenepal.hallmark_amt')->from('forex')->join('goldpricenepal', 'forex.date_added=goldpricenepal.date_added', 'inner');
+>>>>>>> 410f8fca42435a2a33c24aa2083e59953c661af2
 		$query = $this->db->get();
 		return $query->result_array();
 	}

@@ -59,17 +59,10 @@ class Charts extends CI_Controller {
 		{
 			$Date = $_POST['forex_date'];
 
-<<<<<<< HEAD
 			//$Date='2013-7-11';
 			$col_name = $this->chart->get_fields('forex');
 			$col_buy = 'UNIX_TIMESTAMP(Date)*1000,';
 			$col_sell = 'UNIX_TIMESTAMP(Date)*1000,';
-=======
-			//$date_added='2013-7-11';
-			$col_name = $this->chart->get_fields('forex');
-			$col_buy = 'UNIX_TIMESTAMP(date_added)*1000,';
-			$col_sell = 'UNIX_TIMESTAMP(date_added)*1000,';
->>>>>>> 410f8fca42435a2a33c24aa2083e59953c661af2
 			foreach ($col_name as $value)
 			{
 				if (preg_match('/_buy/', $value))

@@ -16,7 +16,7 @@ class forex extends CI_Model {
 
 	function get_current_forex()
 	{
-		$this->db->select()->from('final')->order_by('date_added', 'desc');
+		$this->db->select()->from('forex')->order_by('date_added', 'desc');
 		$query = $this->db->get();
 		return $query->first_row('array');
 	}
@@ -42,7 +42,7 @@ class forex extends CI_Model {
 
 	function date_check($forexArray)
 	{
-		$ql = $this->db->select('date_added')->from('final')->where('date_added', $forexArray['date_added'])->get();
+		$ql = $this->db->select('date_added')->from('forex')->where('date_added', $forexArray['date_added'])->get();
 
 		if ($ql->num_rows() > 0)
 		{
@@ -50,7 +50,7 @@ class forex extends CI_Model {
 		}
 		else
 		{
-			$this->db->insert('final', $forexArray);
+			$this->db->insert('forex', $forexArray);
 			$this->make_log();
 			return $this->db->insert_id();
 		}

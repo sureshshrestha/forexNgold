@@ -43,7 +43,7 @@
 							<td><?php
 								$tables = array(
 									'' => '',
-									'final' => 'Forex',
+									'forex' => 'Forex',
 									'goldpricenepal' => 'GoldnSilver'
 								);
 

@@ -143,7 +143,7 @@ class Downloads extends CI_Controller {
 								break;
 						}
 					}
-					elseif ($table == 'final')
+					elseif ($table == 'forex')
 					{
 						switch ($format)
 						{

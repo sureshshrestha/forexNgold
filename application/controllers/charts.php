@@ -60,7 +60,7 @@ class Charts extends CI_Controller {
 			$date_added = $_POST['forex_date'];
 
 			//$date_added='2013-7-11';
-			$col_name = $this->chart->get_fields('final');
+			$col_name = $this->chart->get_fields('forex');
 			$col_buy = 'UNIX_TIMESTAMP(date_added)*1000,';
 			$col_sell = 'UNIX_TIMESTAMP(date_added)*1000,';
 			foreach ($col_name as $value)

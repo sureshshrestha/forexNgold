@@ -16,7 +16,7 @@ class apis extends REST_Controller {
 	public function forex_get()
 	{
 
-		$table = 'final';
+		$table = 'forex';
 		$date = $this->get('date');
 		$key = $this->get('key');
 		$start = $this->get('start_date');
